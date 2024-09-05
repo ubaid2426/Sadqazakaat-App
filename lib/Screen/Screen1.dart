@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sadqahzakat/Components/Carosel/donate_main.dart';
 import 'package:sadqahzakat/Components/Carosel/donation_main.dart';
 import 'package:sadqahzakat/Components/Carosel/homeScreen_carousel.dart';
 import 'package:sadqahzakat/Widgets/drawers_main.dart';
@@ -37,6 +38,7 @@ class Screen1 extends StatelessWidget {
                 H1Main(),
                 About(),
                 DonationData(),
+                Donate(),
               ],
             ),
           )),
@@ -240,7 +242,7 @@ class About extends StatelessWidget {
                       onPressed: () {
                         // Handle Donate button press
                       },
-                      style: ElevatedButton.styleFrom(
+                      style: TextButton.styleFrom(
                         backgroundColor: Colors.green, // Button color
                         padding: const EdgeInsets.symmetric(
                           horizontal: 40,

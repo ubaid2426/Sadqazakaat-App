@@ -36,7 +36,7 @@ class Donation extends StatelessWidget {
             const SizedBox(height: 16),
             Text(
               title,
-            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const Divider(
               color: Colors.black,
@@ -60,43 +60,64 @@ class DonationData extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
-        Donation(
+        const Donation(
           imageUrl: 'Assests/Images/10031.png',
           title: 'Meal Donation',
           description:
               'Providing nutritious meals to those in need, ensuring no one goes hungry in our community.',
         ),
-        Donation(
+        const Donation(
           imageUrl: 'Assests/Images/10002.png',
           title: 'Daig Donation',
           description:
               'Supplying essential medications to those in need, promoting health and well-being in our community.',
         ),
-        Donation(
+        const Donation(
           imageUrl: 'Assests/Images/10026.png',
           title: 'Tree Donation',
           description:
               'Planting trees to enhance our environment, combat climate change, and foster a greener future.',
         ),
-        Donation(
+        const Donation(
           imageUrl: 'Assests/Images/10004.png',
           title: 'WheelChairs',
           description:
               'Donating wheelchairs to empower mobility and enhance independence for those with mobility challenges',
         ),
-        Donation(
+        const Donation(
           imageUrl: 'Assests/Images/10005.png',
           title: 'Medical bed',
           description:
               'Providing medical beds to ensure comfort and proper care for individuals in need of support.',
         ),
-        Donation(
+        const Donation(
           imageUrl: 'Assests/Images/10006.png',
           title: 'Clothes',
           description:
               'Donating clothes to offer warmth and dignity, helping those in need with essential clothing.',
+        ),
+        const SizedBox(height: 20),
+        TextButton(
+          onPressed: () {
+            // Handle Donate button press
+          },
+          style: TextButton.styleFrom(
+            backgroundColor: Colors.green, // Button color
+            padding: const EdgeInsets.symmetric(
+              horizontal: 40,
+              vertical: 15,
+            ),
+          ),
+          child: const Text(
+            "View All",
+            style: TextStyle(
+              fontSize: 18.8,
+              fontFamily: "Montserrat",
+              color: Colors.black,
+            ),
+          ),
         ),
       ],
     );

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sadqahzakat/Screen/Screen1.dart';
-import 'package:sadqahzakat/Widgets/drawers_main.dart';
+// import 'package:sadqahzakat/Widgets/drawers_main.dart';
 
 void main() {
   runApp(const MyApp());
