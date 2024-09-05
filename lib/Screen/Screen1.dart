@@ -236,7 +236,7 @@ class About extends StatelessWidget {
                       textAlign: TextAlign.start,
                     ),
                     const SizedBox(height: 40),
-                    RaisedButton(
+                    TextButton(
                       onPressed: () {
                         // Handle Donate button press
                       },
