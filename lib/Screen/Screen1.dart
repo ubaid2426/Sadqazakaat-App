@@ -38,7 +38,7 @@ class Screen1 extends StatelessWidget {
                 H1Main(),
                 About(),
                 DonationData(),
-                Donate(),
+                ChooseAmountPage(),
               ],
             ),
           )),
