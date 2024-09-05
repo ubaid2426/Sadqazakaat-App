@@ -81,13 +81,19 @@ flutter:
   fonts:
     - family: Cormorant
       fonts:
-        - asset: Assests/Fonts/Cormorant/Cormorant-VariableFont_wght.ttf
+        - asset: Assests/Fonts/Cormorant/static/Cormorant-VariableFont_wght.ttf
         # - asset: fonts/Schyler-Italic.ttf
   #         style: italic
     - family: Montserrat
       fonts:
+        - asset: Assests/Fonts/Montserrat/Montserrat-VariableFont_wght.ttf
+        # - asset: Assests/Fonts/Montserrat/static/Montserrat-VariableFont_wght.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+    - family: Roboto
+      fonts:
         # - asset: Assests/Fonts/Montserrat/Montserrat-VariableFont_wght.ttf
-        - asset: Assests/Fonts/Montserrat/static/Montserrat-Regular.ttf
+        - asset: Assests/Fonts/Roboto/static/Roboto-Regular.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #

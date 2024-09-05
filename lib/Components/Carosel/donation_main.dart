@@ -36,7 +36,10 @@ class Donation extends StatelessWidget {
             const SizedBox(height: 16),
             Text(
               title,
-              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: const TextStyle(
+                  fontSize: 20,
+                  fontFamily: "Montserrat",
+                  fontWeight: FontWeight.bold),
             ),
             const Divider(
               color: Colors.black,
@@ -45,7 +48,10 @@ class Donation extends StatelessWidget {
             const SizedBox(height: 8),
             Text(
               description,
-              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w300),
+              style: const TextStyle(
+                  fontSize: 24,
+                  fontFamily: "Cormorant",
+                  fontWeight: FontWeight.w500),
               textAlign: TextAlign.start,
             ),
           ],
