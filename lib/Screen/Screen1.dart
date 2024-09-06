@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sadqahzakat/Components/Carosel/donate_main.dart';
 import 'package:sadqahzakat/Components/Carosel/donation_main.dart';
 import 'package:sadqahzakat/Components/Carosel/homeScreen_carousel.dart';
+import 'package:sadqahzakat/Components/beneficery_main.dart';
 import 'package:sadqahzakat/Widgets/drawers_main.dart';
 
 void main() {
@@ -38,7 +40,41 @@ class Screen1 extends StatelessWidget {
                 H1Main(),
                 About(),
                 DonationData(),
-                ChooseAmountPage(),
+                SizedBox(height: 50),
+                Hadith(),
+                SizedBox(height: 50),
+                QuranVerse(),
+                SizedBox(height: 50),
+                Quotes(),
+                SizedBox(height: 50),
+                JoinUs(),
+                SizedBox(height: 50),
+                Donate(),
+                Event(),
+                MarriageSupport(
+                  h3: "Our Numbers",
+                  h1: 'Rs.100000+',
+                  h2: 'Meal Donations',
+                  fontawesome: FontAwesomeIcons.faceDizzy,
+                ),
+                MarriageSupport(
+                  h1: 'Rs.400000+',
+                  h2: 'Flood Donations',
+                  fontawesome: FontAwesomeIcons.bolt,
+                ),
+                MarriageSupport(
+                  h1: 'Rs.200000+',
+                  h2: 'Medical Donations',
+                  fontawesome: FontAwesomeIcons.houseChimneyUser,
+                ),
+                MarriageSupport(
+                  h1: 'Rs.300000+',
+                  h2: 'Marriage Support',
+                  fontawesome: FontAwesomeIcons.solidHeart,
+                ),
+                Beneficery(),
+                Impact(),
+                WeDo(),
               ],
             ),
           )),
@@ -57,7 +93,88 @@ class CarouselHome extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         height: 200,
         // color: Colors.red,
-        child: HomePageCarousel(),
+        child: const HomePageCarousel(
+          imageList: [
+            "Assests/Images/10007.png",
+            "Assests/Images/10008.png",
+            "Assests/Images/10009.png",
+            "Assests/Images/10010.png",
+            "Assests/Images/10011.png",
+          ],
+          carouselHeight: 200,
+        ),
+      ),
+    );
+  }
+}
+
+class Hadith extends StatelessWidget {
+  const Hadith({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+      child: Container(
+        width: MediaQuery.of(context).size.width,
+        height: 300,
+        // color: Colors.red,
+        child: const HomePageCarousel(
+          imageList: [
+            "Assests/Images/10013.png",
+            "Assests/Images/10014.png",
+            "Assests/Images/10015.png",
+          ],
+          carouselHeight: 300,
+        ),
+      ),
+    );
+  }
+}
+
+class QuranVerse extends StatelessWidget {
+  const QuranVerse({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+      child: Container(
+        width: MediaQuery.of(context).size.width,
+        height: 300,
+        // color: Colors.red,
+        child: const HomePageCarousel(
+          imageList: [
+            "Assests/Images/10016.png",
+            "Assests/Images/10017.png",
+            "Assests/Images/10018.png",
+          ],
+          carouselHeight: 300,
+        ),
+      ),
+    );
+  }
+}
+
+class Quotes extends StatelessWidget {
+  const Quotes({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+      child: Container(
+        width: MediaQuery.of(context).size.width,
+        height: 250,
+        // color: Colors.red,
+        child: const HomePageCarousel(
+          imageList: [
+            "Assests/Images/10019.png",
+            "Assests/Images/10020.png",
+            "Assests/Images/10021.png",
+          ],
+          carouselHeight: 250,
+        ),
       ),
     );
   }
@@ -264,5 +381,575 @@ class About extends StatelessWidget {
             ),
           ],
         ));
+  }
+}
+
+class Event extends StatelessWidget {
+  const Event({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(30.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          const SizedBox(height: 30),
+          const Text(
+            "Event ",
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 20,
+              fontFamily: "Montserrat",
+              letterSpacing: 2,
+              fontWeight: FontWeight.w600,
+            ),
+            textAlign: TextAlign.start,
+          ),
+          const SizedBox(height: 30),
+          const Text(
+            "Help Us Fund Critical Projects for Lasting Impact ",
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 25,
+              fontFamily: "Cormorant",
+              letterSpacing: 2,
+              fontWeight: FontWeight.w900,
+            ),
+            textAlign: TextAlign.start,
+          ),
+          const SizedBox(height: 30),
+          Stack(
+            children: [
+              Container(
+                // color: const Color.fromARGB(16, 0, 0, 0),
+                width: MediaQuery.of(context).size.width,
+                height: 200,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                        'Assests/Images/10024.png'), // Adjust the image path
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.center,
+                child: Container(
+                  color: const Color.fromARGB(181, 0, 0, 0),
+                  width: MediaQuery.of(context).size.width,
+                  height: 200,
+                ),
+              ),
+              Align(
+                alignment: Alignment.center, // Adjust the alignment of the text
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const Text(
+                        "Help us raise money for impactful change",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontFamily: "Cormorant",
+                          letterSpacing: 2,
+                          fontWeight: FontWeight.w900,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(height: 10),
+                      TextButton(
+                        onPressed: () {
+                          // Handle Donate button press
+                        },
+                        style: TextButton.styleFrom(
+                          backgroundColor: Colors.green, // Button color
+                          // padding: const EdgeInsets.symmetric(
+                          //   horizontal: 40,
+                          //   vertical: 15,
+                          // ),
+                        ),
+                        child: const Text(
+                          "Read More",
+                          style: TextStyle(
+                            fontSize: 18.8,
+                            fontFamily: "Roboto",
+                            color: Colors.black,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class JoinUs extends StatelessWidget {
+  const JoinUs({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Stack(
+          children: [
+            Container(
+              // color: const Color.fromARGB(16, 0, 0, 0),
+              width: MediaQuery.of(context).size.width,
+              height: 800,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                      'Assests/Images/10022.png'), // Adjust the image path
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            Align(
+              alignment: Alignment.center,
+              child: Container(
+                color: const Color.fromARGB(181, 0, 0, 0),
+                width: MediaQuery.of(context).size.width,
+                height: 800,
+              ),
+            ),
+            Align(
+              alignment: Alignment.center, // Adjust the alignment of the text
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(height: 200),
+                    const Text(
+                      "COME JOIN US ",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 25,
+                        fontFamily: "Montserrat",
+                        letterSpacing: 2,
+                        fontWeight: FontWeight.w600,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: 50),
+                    const Divider(
+                      thickness: 3,
+                    ),
+                    const SizedBox(height: 50),
+                    const Text(
+                      "Come join us in making a difference. Your support helps change lives and strengthen communities.",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 30,
+                        fontFamily: "Cormorant",
+                        letterSpacing: 2,
+                        fontWeight: FontWeight.w600,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: 50),
+                    Center(
+                      child: TextButton(
+                        onPressed: () {
+                          // Handle Donate button press
+                        },
+                        style: TextButton.styleFrom(
+                          backgroundColor: Colors.green, // Button color
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 40,
+                            vertical: 15,
+                          ),
+                        ),
+                        child: const Text(
+                          "Join Our Community",
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontFamily: "Roboto",
+                            color: Colors.black,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+class MarriageSupport extends StatelessWidget {
+  final String h1;
+  final String h2;
+  final String? h3;
+  final IconData fontawesome;
+  const MarriageSupport({
+    super.key,
+    required this.h1,
+    required this.h2,
+    required this.fontawesome,
+    this.h3,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    // ignore: prefer_const_constructors
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      color: const Color(0xFF29C77B),
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          children: [
+            Text(
+              h3 ?? '',
+              style: const TextStyle(
+                color: Color.fromARGB(255, 19, 19, 19),
+                fontSize: 40,
+                fontFamily: "Cormorant",
+                letterSpacing: 2,
+                fontWeight: FontWeight.w900,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 10),
+            Icon(
+              fontawesome,
+              size: 50,
+            ),
+            const SizedBox(height: 30),
+            Text(
+              h1,
+              style: const TextStyle(
+                color: Color.fromARGB(255, 8, 8, 8),
+                fontSize: 30,
+                fontFamily: "Cormorant",
+                letterSpacing: 2,
+                fontWeight: FontWeight.w900,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 20),
+            Text(
+              h2,
+              style: const TextStyle(
+                color: Color.fromARGB(255, 8, 8, 8),
+                fontSize: 30,
+                fontFamily: "Roboto",
+                letterSpacing: 2,
+                fontWeight: FontWeight.w600,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class Beneficery extends StatelessWidget {
+  const Beneficery({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Column(
+      children: [
+        SizedBox(height: 50),
+        Text(
+          "What People Say About Us",
+          style: TextStyle(
+            color: Color.fromARGB(255, 8, 8, 8),
+            fontSize: 30,
+            fontFamily: "Cormorant",
+            letterSpacing: 2,
+            fontWeight: FontWeight.w600,
+          ),
+          textAlign: TextAlign.center,
+        ),
+        SizedBox(height: 20),
+        Benificery(
+          des:
+              'Your support has transformed our community, providing hope and essential services where they were needed most.',
+        ),
+        Benificery(
+          des:
+              'Thanks to your help, our family received the resources needed to rebuild and start anew.',
+        ),
+        Benificery(
+          des:
+              'The impact of your contributions is evident in the lives you\'ve touched and the smiles you\'ve brought.',
+        ),
+      ],
+    );
+  }
+}
+
+class Impact extends StatelessWidget {
+  const Impact({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Padding(
+      padding: EdgeInsets.all(20.0),
+      child: Stack(
+        children: [
+          Inner(),
+          Positioned(
+            bottom: 0,
+            right: 0,
+            height: 400,
+            child: Outer(),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class Inner extends StatelessWidget {
+  const Inner({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 700,
+      child: Column(
+        children: [
+          Stack(
+            children: [
+              Container(
+                // color: const Color.fromARGB(16, 0, 0, 0),
+                width: MediaQuery.of(context).size.width,
+                height: 500,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                        'Assests/Images/10025.png'), // Adjust the image path
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.center,
+                child: Container(
+                  color: const Color.fromARGB(181, 0, 0, 0),
+                  width: MediaQuery.of(context).size.width,
+                  height: 500,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 200,
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class Outer extends StatelessWidget {
+  const Outer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: MediaQuery.of(context).size.width * 0.7,
+      child: Stack(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(0.0),
+            child: Container(
+              color: const Color.fromARGB(255, 250, 249, 249),
+              width: MediaQuery.of(context).size.width,
+              height: 500,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(0.0),
+            child: Align(
+              alignment: Alignment.center,
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: 500,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    opacity: .1,
+                    image: AssetImage(
+                        'Assests/Images/10034.png'), // Adjust the image path
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ),
+            ),
+          ),
+         const Align(
+            child:Column(
+              children: [
+                  SizedBox(height: 30),
+                   Text(
+            "Our Impact",
+            style: TextStyle(
+              color: Color.fromARGB(255, 17, 17, 17),
+              fontSize: 20,
+              fontFamily: "Montserrat",
+              letterSpacing: 2,
+              fontWeight: FontWeight.w600,
+            ),
+            textAlign: TextAlign.center,
+          ),
+           SizedBox(height: 10),
+           Padding(
+             padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+             child: Divider(
+              thickness: 3,
+              
+              color: Colors.black,
+                       ),
+           ),
+           SizedBox(height: 20),
+           Text(
+            "ransforming lives and communities through dedicated support and outreach efforts",
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 34,
+              fontFamily: "Cormorant",
+              letterSpacing: 1,
+              fontWeight: FontWeight.w500,
+            ),
+            textAlign: TextAlign.center,
+          ),
+           SizedBox(height: 50),
+              ],
+            )
+          )
+        ],
+      ),
+    );
+  }
+}
+
+
+class WeDo extends StatelessWidget {
+  const WeDo({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Padding(
+      padding: EdgeInsets.all(20.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+           Text(
+            "What We Do",
+            style: TextStyle(
+              color: Color.fromARGB(255, 8, 8, 8),
+              fontSize: 25,
+              fontFamily: "Cormorant",
+              fontWeight: FontWeight.w600,
+            ),
+            textAlign: TextAlign.start,
+          ),
+          Divider(
+            thickness: 3,
+            color: Colors.black,
+          ),
+             Text(
+              "Providing essential resources to those in need.",
+              style: TextStyle(
+                color: Color.fromARGB(255, 17, 17, 17),
+                fontSize: 16,
+                fontFamily: "Montserrat",
+                fontWeight: FontWeight.w600,
+              ),
+              textAlign: TextAlign.start,
+            ),
+             Divider(
+            thickness: 1,
+            color: Colors.black,
+          ),
+            Text(
+              "Improving community health and well-being",
+              style: TextStyle(
+                color: Color.fromARGB(255, 17, 17, 17),
+                fontSize: 16,
+                fontFamily: "Montserrat",
+                // letterSpacing: 2,
+                fontWeight: FontWeight.w600,
+              ),
+              textAlign: TextAlign.start,
+            ),
+                 Divider(
+            thickness: 1,
+            color: Colors.black,
+          ),
+            Text(
+              "Supporting educational and skill development programs.",
+              style: TextStyle(
+                color: Color.fromARGB(255, 17, 17, 17),
+                fontSize: 16,
+                fontFamily: "Montserrat",
+                // letterSpacing: 2,
+                fontWeight: FontWeight.w600,
+              ),
+              textAlign: TextAlign.start,
+            ),
+                 Divider(
+            thickness: 1,
+            color: Colors.black,
+          ),
+            Text(
+              "Facilitating disaster relief and recovery efforts",
+              style: TextStyle(
+                color: Color(0xFF55B534),
+                fontSize: 16,
+                fontFamily: "Montserrat",
+                // letterSpacing: 2,
+                fontWeight: FontWeight.w900,
+              ),
+              textAlign: TextAlign.start,
+            ),
+                 Divider(
+            thickness: 1,
+            color: Colors.black,
+          ),
+            Text(
+              "Empowering individuals through targeted assistance.",
+              style: TextStyle(
+                color: Color.fromARGB(255, 17, 17, 17),
+                fontSize: 16,
+                fontFamily: "Montserrat",
+                // letterSpacing: 2,
+                fontWeight: FontWeight.w600,
+              ),
+              textAlign: TextAlign.start,
+            ),
+                 Divider(
+            thickness: 1,
+            color: Colors.black,
+          ),
+        ],
+      ),
+    );
   }
 }

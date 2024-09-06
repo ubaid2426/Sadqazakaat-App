@@ -92,22 +92,9 @@ class MainDrawer extends StatelessWidget {
                 DonationMenu(
                   menuTitle: 'Donation',
                   subOptions: [
-                    "Portable House",
-                    'Masjid Maintenance',
-                    'Marriage Support',
-                    'Flood Relief',
-                    'Widow Family Support',
-                    'Small Business Setup',
-                    'Clothes',
-                    'Medical Bed',
-                    'Wheel Chair',
-                    'Tree Donation',
-                    'Daig Donation',
-                    'Meal Donation',
-                    'Orphan Support',
-                    'Water Cooler',
-                    'Masjid Construction',
-                    "Other"
+                    "Individual Donation",
+                    'Request For Donation',
+                   
                   ],
                   fontawesome: FontAwesomeIcons.donate,
                 ),

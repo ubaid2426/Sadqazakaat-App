@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 // void main() {
 //   runApp(const WheelchairDonationPage());
@@ -70,7 +73,7 @@ class Data extends StatelessWidget {
                 width: 200,
                 child: Text(
                   title,
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontSize: 32,
                       fontFamily: "Roboto",
                       fontWeight: FontWeight.w700),
@@ -88,7 +91,7 @@ class Data extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
                   description,
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontSize: 20,
                       color: Color.fromARGB(255, 88, 88, 88),
                       fontFamily: "Montserrat",
@@ -232,7 +235,7 @@ class Data extends StatelessWidget {
                 height: 30,
                 // color: Colors.green,
                 decoration: BoxDecoration(
-                  color: Color(0xFFF1F1F1),
+                  color: const Color(0xFFF1F1F1),
                   // borderRadius:Radius.circular(100),
                   borderRadius: BorderRadius.circular(100),
                 ),
@@ -240,6 +243,13 @@ class Data extends StatelessWidget {
               const SizedBox(height: 30),
               TextButton(
                 onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ChooseAmountPage(),
+                    ),
+                  );
+
                   // Handle Donate button press
                 },
                 style: TextButton.styleFrom(
@@ -252,9 +262,10 @@ class Data extends StatelessWidget {
                 child: const Text(
                   "Donate Now >",
                   style: TextStyle(
-                    fontSize: 18.8,
-                    fontFamily: "Montserrat",
-                    color: Colors.black,
+                       fontSize: 18.8,
+                          fontFamily: "Roboto",
+                          color: Colors.black,
+                          fontWeight: FontWeight.w700,
                   ),
                 ),
               ),
@@ -279,7 +290,7 @@ class Data extends StatelessWidget {
               const SizedBox(height: 20),
               Container(
                 height: 70,
-                color: Color(0xFFF1F1F1),
+                color: const Color(0xFFF1F1F1),
                 child: const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -309,8 +320,8 @@ class Data extends StatelessWidget {
 
 // import 'package:flutter/material.dart';
 
-
 class ChooseAmountPage extends StatefulWidget {
+  // final String amount;
   const ChooseAmountPage({super.key});
 
   @override
@@ -341,27 +352,47 @@ class _ChooseAmountPageState extends State<ChooseAmountPage> {
     super.dispose();
   }
 
+  void _navigateToDonationForm() {
+    if (selectedAmount <= 0) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Please enter a valid amount')),
+      );
+      return;
+    }
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => DonationFormPage(amount: selectedAmount),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            onPressed: () => Navigator.pop(context),
+            icon: const Icon(Icons.arrow_back),
+          ),
           title: const Text('Choose Amount'),
         ),
         body: SingleChildScrollView(
           child: Padding(
-           padding: const EdgeInsets.fromLTRB(19, 19, 19, 0),
+            padding: const EdgeInsets.fromLTRB(19, 19, 19, 0),
             child: Container(
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
-                // shadowColor: Colors.grey.withOpacity(0.2), // Shadow color
                 boxShadow: [
                   BoxShadow(
                     color: Colors.grey.withOpacity(0.5), // Shadow color
                     spreadRadius: 5, // How far the shadow spreads
                     blurRadius: 7, // How blurry the shadow is
-                    offset: const Offset(0, 3), // Horizontal and vertical offsets
+                    offset:
+                        const Offset(0, 3), // Horizontal and vertical offsets
                   ),
                 ],
               ),
@@ -374,7 +405,7 @@ class _ChooseAmountPageState extends State<ChooseAmountPage> {
                         fontSize: 18,
                         color: Color.fromARGB(255, 58, 56, 56),
                         fontFamily: "Montserrat",
-                        fontWeight: FontWeight.w500),
+                        fontWeight: FontWeight.w900),
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 16),
@@ -395,7 +426,7 @@ class _ChooseAmountPageState extends State<ChooseAmountPage> {
                           child: TextField(
                             keyboardType: TextInputType.number,
                             controller: customAmountController,
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                               border: OutlineInputBorder(),
                               hintText: 'Enter amount',
                             ),
@@ -455,9 +486,7 @@ class _ChooseAmountPageState extends State<ChooseAmountPage> {
                   ),
                   const SizedBox(height: 32),
                   TextButton(
-                    onPressed: () {
-                      // Handle Donate button press
-                    },
+                    onPressed: _navigateToDonationForm,
                     style: TextButton.styleFrom(
                       backgroundColor: Colors.green, // Button color
                       padding: const EdgeInsets.symmetric(
@@ -468,16 +497,17 @@ class _ChooseAmountPageState extends State<ChooseAmountPage> {
                     child: const Text(
                       "Donate Now >",
                       style: TextStyle(
-                        fontSize: 18.8,
-                        fontFamily: "Montserrat",
-                        color: Colors.black,
+                           fontSize: 18.8,
+                          fontFamily: "Roboto",
+                          color: Colors.black,
+                          fontWeight: FontWeight.w700,
                       ),
                     ),
                   ),
                   const SizedBox(height: 40),
                   Container(
                     height: 70,
-                    color: Color(0xFFF1F1F1),
+                    color: const Color(0xFFF1F1F1),
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -521,7 +551,8 @@ class DonationButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        backgroundColor: amount == 0 ? Color(0xFF29C77B) : Color(0xFF29C77B),
+        backgroundColor:
+            amount == 0 ? const Color(0xFF29C77B) : const Color(0xFF29C77B),
       ),
       child: SizedBox(
         width: 68,
@@ -530,7 +561,6 @@ class DonationButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              // text.isEmpty ? 'Rs
               text.isEmpty ? 'Rs $amount' : text,
               style: TextStyle(
                 color: amount == 0 ? Colors.black : Colors.white,
@@ -545,7 +575,590 @@ class DonationButton extends StatelessWidget {
   }
 }
 
+class DonationFormPage extends StatefulWidget {
+  final int amount;
+  DonationFormPage({Key? key, required this.amount}) : super(key: key);
 
+  @override
+  DonationFormPageState createState() => DonationFormPageState();
+}
 
+class DonationFormPageState extends State<DonationFormPage> {
+  final _formKey = GlobalKey<FormState>();
+  final firstNameController = TextEditingController();
+  final lastNameController = TextEditingController();
+  final emailController = TextEditingController();
+  final depositAmountController = TextEditingController();
+  final UserNameController = TextEditingController();
+  final PasswordController = TextEditingController();
+  // final int widthful = 0;
+  bool showLoginForm = false; // To toggle between forms
+  File? _image; // Move _image to State class
+  final picker = ImagePicker(); // Move picker to State class
 
+  late int selectedAmount;
 
+  Future<void> _chooseFile() async {
+    // final pickedFile = await picker.pickImage(source: ImageSource.gallery);
+
+    //   setState(() {
+    //     if (pickedFile != null) {
+    //       _image = File(pickedFile.path);
+    //     }
+    //   });
+  }
+
+  void _submitForm() {
+    final depositAmount = depositAmountController.text;
+    if (_image == null || depositAmount.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Please complete the form')),
+      );
+      return;
+    }
+
+    // Logic to submit the form
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text('Form Submitted')),
+    );
+  }
+
+  void initState() {
+    super.initState();
+    selectedAmount = widget.amount;
+    depositAmountController.text = selectedAmount.toString();
+  }
+
+  @override
+  void dispose() {
+    // Dispose the controllers to free memory
+    firstNameController.dispose();
+    lastNameController.dispose();
+    emailController.dispose();
+    depositAmountController.dispose();
+    UserNameController.dispose();
+    PasswordController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          leading: IconButton(
+            onPressed: () => Navigator.pop(context),
+            icon: const Icon(Icons.arrow_back),
+          ),
+          title: const Text('Add Your Information'),
+        ),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+                // shadowColor: Colors.grey.withOpacity(0.2), // Shadow color
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5), // Shadow color
+                    spreadRadius: 5, // How far the shadow spreads
+                    blurRadius: 7, // How blurry the shadow is
+                    offset:
+                        const Offset(0, 3), // Horizontal and vertical offsets
+                  ),
+                ],
+              ),
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            "Who's giving today?",
+                            style:
+                                TextStyle(fontSize: 22, fontFamily: "Roboto"),
+                            textAlign: TextAlign.center,
+                          ),
+                          const Text(
+                            "We'll never share this information with anyone",
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontFamily: "Roboto1",
+                              fontWeight: FontWeight.w400,
+                              color: Color.fromARGB(255, 58, 56, 56),
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                          showLoginForm
+                              ? Padding(
+                                  padding: const EdgeInsets.all(20.0),
+                                  child: Column(
+                                    children: [
+                                      TextFormField(
+                                        controller:
+                                            UserNameController, // Replace with your username controller
+                                        decoration: const InputDecoration(
+                                          labelText: 'Username*',
+                                        ),
+                                        validator: (value) {
+                                          if (value == null || value.isEmpty) {
+                                            return 'Please enter your username';
+                                          }
+                                          return null;
+                                        },
+                                      ),
+                                      TextFormField(
+                                        controller:
+                                            PasswordController, // Replace with your password controller
+                                        obscureText:
+                                            true, // This will hide the text entered for password
+                                        decoration: const InputDecoration(
+                                          labelText: 'Password*',
+                                        ),
+                                        validator: (value) {
+                                          if (value == null || value.isEmpty) {
+                                            return 'Please enter your password';
+                                          } else if (value.length < 6) {
+                                            return 'Password must be at least 6 characters long';
+                                          }
+                                          return null;
+                                        },
+                                      ),
+                                      Row(
+                                        children: [
+                                          TextButton(
+                                            onPressed: () {},
+                                            child: const Text("Reset Password"),
+                                          ),
+                                          TextButton(
+                                            onPressed: () {
+                                              setState(() {
+                                                showLoginForm =
+                                                    false; // Return to the donation form
+                                              });
+                                            },
+                                            child: const Text("Cancel"),
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                )
+                              : Padding(
+                                  padding: const EdgeInsets.all(25.0),
+                                  child: Column(
+                                    children: [
+                                      TextFormField(
+                                        controller: firstNameController,
+                                        decoration: const InputDecoration(
+                                          labelText: 'First Name*',
+                                        ),
+                                        validator: (value) {
+                                          if (value == null || value.isEmpty) {
+                                            return 'Please enter your first name';
+                                          }
+                                          return null;
+                                        },
+                                      ),
+                                      TextFormField(
+                                        controller: lastNameController,
+                                        decoration: const InputDecoration(
+                                          labelText: 'Last Name',
+                                        ),
+                                      ),
+                                      TextFormField(
+                                        controller: emailController,
+                                        decoration: const InputDecoration(
+                                          labelText: 'Email Address*',
+                                        ),
+                                        validator: (value) {
+                                          if (value == null || value.isEmpty) {
+                                            return 'Please enter your email address';
+                                          } else if (!RegExp(
+                                                  r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$')
+                                              .hasMatch(value)) {
+                                            return 'Please enter a valid email address';
+                                          }
+                                          return null;
+                                        },
+                                      ),
+                                      const _CheckBoxState(),
+                                      Row(
+                                        children: [
+                                          const Text("Already Have an Account"),
+                                          TextButton(
+                                            onPressed: () {
+                                              setState(() {
+                                                showLoginForm =
+                                                    true; // Return to the donation form
+                                              });
+                                            },
+                                            child: const Text("Login"),
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                ),
+                          const Text(
+                            'To make an offline donation toward this cause, send your amount in any 1 of the account:',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontFamily: "Roboto",
+                              fontWeight: FontWeight.w500,
+                              // letterSpacing: 2,
+                            ),
+                          ),
+                          const SizedBox(height: 50),
+                          const Padding(
+                            padding: EdgeInsets.all(18.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  '1. Account number: \n3088383000001023\nBank Name: Faysal Bank\nZuha Rashid',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                  textAlign: TextAlign.start,
+                                ),
+                                SizedBox(height: 16),
+                                Text(
+                                  '2. International Donors: PK23FAYS3088383000001023',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                  textAlign: TextAlign.start,
+                                ),
+                                SizedBox(height: 16),
+                                Text(
+                                  '3. Jazzcash Number: 03363582087',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                  textAlign: TextAlign.start,
+                                ),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(height: 32),
+                          const Text(
+                            'Kindly Attach Deposit Slip',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontFamily: "Roboto",
+                              color: Color.fromARGB(255, 58, 56, 56),
+                              fontWeight: FontWeight.w500,
+                              // letterSpacing: 2,
+                            ),
+                          ),
+                          const SizedBox(height: 8),
+                          ElevatedButton(
+                            onPressed: _chooseFile,
+                            child: const Text('Choose file'),
+                          ),
+                          const SizedBox(height: 16),
+                          _image == null
+                              ? const Text('No file chosen')
+                              : Text('File chosen: ${_image!.path}'),
+                          const SizedBox(height: 16),
+                          TextField(
+                            controller: depositAmountController,
+                            keyboardType: TextInputType.number,
+                            decoration: const InputDecoration(
+                              labelText: 'Deposit Amount',
+                              border: OutlineInputBorder(),
+                            ),
+                          ),
+
+                          const SizedBox(height: 16),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const Text(
+                                'Donation Summary',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontFamily: "Roboto",
+                                  fontWeight: FontWeight.w900,
+                                  // letterSpacing: 2,
+                                ),
+                              ),
+                              TextButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>const ChooseAmountPage(),
+                                      ),
+                                    );
+                                  },
+                                  child: Text("Edit Donation"))
+                            ],
+                          ),
+                          const SizedBox(height: 16),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const Text(
+                                'Payment Amount',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontFamily: "Roboto",
+                                  color: Color.fromARGB(255, 58, 56, 56),
+                                  fontWeight: FontWeight.w600,
+                                  // letterSpacing: 2,
+                                ),
+                              ),
+                              Text('Rs $selectedAmount'),
+                            ],
+                          ),
+                          const SizedBox(height: 16),
+                          const Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Giving Frequency',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontFamily: "Roboto",
+                                  color: Color.fromARGB(255, 58, 56, 56),
+                                  fontWeight: FontWeight.w600,
+                                  // letterSpacing: 2,
+                                ),
+                              ),
+                              Text('One time'),
+                            ],
+                          ),
+                          const SizedBox(height: 16),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const Text(
+                                'Donation Total',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontFamily: "Roboto",
+                                  // color: Color.fromARGB(255, 58, 56, 56),
+                                  fontWeight: FontWeight.w900,
+                                  // letterSpacing: 2,
+                                ),
+                              ),
+                              Text('Rs $selectedAmount'),
+                            ],
+                          ),
+                          const SizedBox(height: 32),
+                          // ElevatedButton(
+                          //   onPressed: () {
+                          //     if (_formKey.currentState!.validate()) {
+                          //       _submitForm();
+                          //     }
+                          //   },
+                          //   child: const Text('Donate Now'),
+                          // ),
+                        ],
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          _submitForm();
+                        }
+                      },
+                      style: TextButton.styleFrom(
+                        backgroundColor: Colors.green, // Button color
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 50,
+                          vertical: 25,
+                        ),
+                      ),
+                      child: const Text(
+                        "Donate Now >",
+                        style: TextStyle(
+                          fontSize: 18.8,
+                          fontFamily: "Roboto",
+                          color: Colors.black,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    Container(
+                      width: MediaQuery.of(context).size.width + 40,
+                      height: 70,
+                      color: const Color(0xFFF1F1F1),
+                      child: const Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.lock,
+                            color: Color.fromARGB(72, 81, 75, 75),
+                          ),
+                          SizedBox(width: 10),
+                          Text(
+                            ' Secure Donation',
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.w300),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _SingUpMain() {
+    return MaterialApp(
+      home: Scaffold(
+        body: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            children: [
+              TextFormField(
+                controller:
+                    UserNameController, // Replace with your username controller
+                decoration: const InputDecoration(
+                  labelText: 'Username*',
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your username';
+                  }
+                  return null;
+                },
+              ),
+              TextFormField(
+                controller:
+                    PasswordController, // Replace with your password controller
+                obscureText:
+                    true, // This will hide the text entered for password
+                decoration: const InputDecoration(
+                  labelText: 'Password*',
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your password';
+                  } else if (value.length < 6) {
+                    return 'Password must be at least 6 characters long';
+                  }
+                  return null;
+                },
+              ),
+              Row(
+                children: [
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text("Reset Password"),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      setState(() {
+                        showLoginForm = true; // Return to the donation form
+                      });
+                    },
+                    child: const Text("Cancel"),
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _LoginMain() {
+    return MaterialApp(
+      home: Scaffold(
+        body: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            children: [
+              TextFormField(
+                controller:
+                    UserNameController, // Replace with your username controller
+                decoration: const InputDecoration(
+                  labelText: 'Username*',
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your username';
+                  }
+                  return null;
+                },
+              ),
+              TextFormField(
+                controller:
+                    PasswordController, // Replace with your password controller
+                obscureText:
+                    true, // This will hide the text entered for password
+                decoration: const InputDecoration(
+                  labelText: 'Password*',
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your password';
+                  } else if (value.length < 6) {
+                    return 'Password must be at least 6 characters long';
+                  }
+                  return null;
+                },
+              ),
+              Row(
+                children: [
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text("Reset Password"),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      setState(() {
+                        showLoginForm = false; // Return to the donation form
+                      });
+                    },
+                    child: const Text("Cancel"),
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _CheckBoxState extends StatefulWidget {
+  const _CheckBoxState({super.key});
+
+  @override
+  State<_CheckBoxState> createState() => __CheckBoxStateState();
+}
+
+class __CheckBoxStateState extends State<_CheckBoxState> {
+  bool ischecked = true;
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 230,
+      child: CheckboxListTile(
+        title: const Text('Create Account'),
+        value: ischecked,
+        onChanged: (value) => setState(
+          () {
+            ischecked = value!;
+            print('$ischecked');
+          },
+        ),
+      ),
+    );
+  }
+}

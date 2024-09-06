@@ -49,9 +49,11 @@ class Donation extends StatelessWidget {
             Text(
               description,
               style: const TextStyle(
-                  fontSize: 24,
+                  fontSize: 28,
                   fontFamily: "Cormorant",
-                  fontWeight: FontWeight.w500),
+                  letterSpacing: 2,
+                  color: Color.fromARGB(255, 98, 97, 97),
+                  fontWeight: FontWeight.w600),
               textAlign: TextAlign.start,
             ),
           ],
@@ -119,9 +121,10 @@ class DonationData extends StatelessWidget {
           child: const Text(
             "View All",
             style: TextStyle(
-              fontSize: 18.8,
-              fontFamily: "Montserrat",
-              color: Colors.black,
+                 fontSize: 18.8,
+                          fontFamily: "Roboto",
+                          color: Colors.black,
+                          fontWeight: FontWeight.w700,
             ),
           ),
         ),
