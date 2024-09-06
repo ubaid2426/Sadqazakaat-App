@@ -34,6 +34,8 @@ dependencies:
   simple_animations: ^5.0.2
   carousel_slider: ^5.0.0
   font_awesome_flutter: ^10.6.0
+  flick_video_player: ^0.9.0 
+  video_player: ^2.9.1
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
@@ -64,6 +66,7 @@ flutter:
   assets:
     - Assests/
     - Assests/Images/  
+    - Assests/videos/  
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

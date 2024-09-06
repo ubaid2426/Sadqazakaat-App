@@ -4,6 +4,9 @@ import 'package:sadqahzakat/Components/Carosel/donate_main.dart';
 import 'package:sadqahzakat/Components/Carosel/donation_main.dart';
 import 'package:sadqahzakat/Components/Carosel/homeScreen_carousel.dart';
 import 'package:sadqahzakat/Components/beneficery_main.dart';
+import 'package:sadqahzakat/Components/footer_main.dart';
+import 'package:sadqahzakat/Components/video_player.dart';
+// import 'package:sadqahzakat/Components/video_player.dart';
 import 'package:sadqahzakat/Widgets/drawers_main.dart';
 
 void main() {
@@ -33,48 +36,53 @@ class Screen1 extends StatelessWidget {
             ),
           ),
           drawer: const MainDrawer(),
-          body: const SingleChildScrollView(
+          body:  SingleChildScrollView(
             child: Column(
               children: [
-                CarouselHome(),
-                H1Main(),
-                About(),
-                DonationData(),
-                SizedBox(height: 50),
-                Hadith(),
-                SizedBox(height: 50),
-                QuranVerse(),
-                SizedBox(height: 50),
-                Quotes(),
-                SizedBox(height: 50),
-                JoinUs(),
-                SizedBox(height: 50),
-                Donate(),
-                Event(),
-                MarriageSupport(
+                const CarouselHome(),
+                const H1Main(),
+                const About(),
+                const DonationData(),
+                const SizedBox(height: 50),
+                const Hadith(),
+                const SizedBox(height: 50),
+                const QuranVerse(),
+                const SizedBox(height: 50),
+                const Quotes(),
+                const SizedBox(height: 50),
+                const JoinUs(),
+                const SizedBox(height: 50),
+                const Donate(),
+                const Event(),
+                const MarriageSupport(
                   h3: "Our Numbers",
                   h1: 'Rs.100000+',
                   h2: 'Meal Donations',
                   fontawesome: FontAwesomeIcons.faceDizzy,
                 ),
-                MarriageSupport(
+                const MarriageSupport(
                   h1: 'Rs.400000+',
                   h2: 'Flood Donations',
                   fontawesome: FontAwesomeIcons.bolt,
                 ),
-                MarriageSupport(
+                const MarriageSupport(
                   h1: 'Rs.200000+',
                   h2: 'Medical Donations',
                   fontawesome: FontAwesomeIcons.houseChimneyUser,
                 ),
-                MarriageSupport(
+                const MarriageSupport(
                   h1: 'Rs.300000+',
                   h2: 'Marriage Support',
                   fontawesome: FontAwesomeIcons.solidHeart,
                 ),
-                Beneficery(),
-                Impact(),
-                WeDo(),
+                const Beneficery(),
+                const Impact(),
+                const WeDo(),
+                const Difference(),
+                const SizedBox(height: 50),
+                const VideoPlayerApp(),
+                const SizedBox(height: 50),
+                Footer(),
               ],
             ),
           )),
@@ -803,52 +811,49 @@ class Outer extends StatelessWidget {
               ),
             ),
           ),
-         const Align(
-            child:Column(
-              children: [
-                  SizedBox(height: 30),
-                   Text(
-            "Our Impact",
-            style: TextStyle(
-              color: Color.fromARGB(255, 17, 17, 17),
-              fontSize: 20,
-              fontFamily: "Montserrat",
-              letterSpacing: 2,
-              fontWeight: FontWeight.w600,
-            ),
-            textAlign: TextAlign.center,
-          ),
-           SizedBox(height: 10),
-           Padding(
-             padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-             child: Divider(
-              thickness: 3,
-              
-              color: Colors.black,
-                       ),
-           ),
-           SizedBox(height: 20),
-           Text(
-            "ransforming lives and communities through dedicated support and outreach efforts",
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 34,
-              fontFamily: "Cormorant",
-              letterSpacing: 1,
-              fontWeight: FontWeight.w500,
-            ),
-            textAlign: TextAlign.center,
-          ),
-           SizedBox(height: 50),
-              ],
-            )
-          )
+          const Align(
+              child: Column(
+            children: [
+              SizedBox(height: 30),
+              Text(
+                "Our Impact",
+                style: TextStyle(
+                  color: Color.fromARGB(255, 17, 17, 17),
+                  fontSize: 20,
+                  fontFamily: "Montserrat",
+                  letterSpacing: 2,
+                  fontWeight: FontWeight.w600,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: 10),
+              Padding(
+                padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                child: Divider(
+                  thickness: 3,
+                  color: Colors.black,
+                ),
+              ),
+              SizedBox(height: 20),
+              Text(
+                "ransforming lives and communities through dedicated support and outreach efforts",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 34,
+                  fontFamily: "Cormorant",
+                  letterSpacing: 1,
+                  fontWeight: FontWeight.w500,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: 50),
+            ],
+          ))
         ],
       ),
     );
   }
 }
-
 
 class WeDo extends StatelessWidget {
   const WeDo({super.key});
@@ -860,95 +865,392 @@ class WeDo extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-           Text(
+          Text(
             "What We Do",
             style: TextStyle(
-              color: Color.fromARGB(255, 8, 8, 8),
+              color: Colors.black,
               fontSize: 25,
               fontFamily: "Cormorant",
               fontWeight: FontWeight.w600,
             ),
             textAlign: TextAlign.start,
           ),
+          SizedBox(height: 30),
           Divider(
             thickness: 3,
             color: Colors.black,
           ),
-             Text(
-              "Providing essential resources to those in need.",
-              style: TextStyle(
-                color: Color.fromARGB(255, 17, 17, 17),
-                fontSize: 16,
-                fontFamily: "Montserrat",
-                fontWeight: FontWeight.w600,
-              ),
-              textAlign: TextAlign.start,
+          SizedBox(height: 30),
+          Text(
+            "Providing essential resources to those in need.",
+            style: TextStyle(
+              color: Color(0xFF55B534),
+              fontSize: 16,
+              fontFamily: "Montserrat",
+              fontWeight: FontWeight.w600,
             ),
-             Divider(
+            textAlign: TextAlign.start,
+          ),
+          SizedBox(height: 20),
+          Divider(
             thickness: 1,
             color: Colors.black,
           ),
-            Text(
-              "Improving community health and well-being",
-              style: TextStyle(
-                color: Color.fromARGB(255, 17, 17, 17),
-                fontSize: 16,
-                fontFamily: "Montserrat",
-                // letterSpacing: 2,
-                fontWeight: FontWeight.w600,
-              ),
-              textAlign: TextAlign.start,
+          SizedBox(height: 20),
+          Text(
+            "Improving community health and well-being",
+            style: TextStyle(
+              color: Color(0xFF55B534),
+              fontSize: 16,
+              fontFamily: "Montserrat",
+              // letterSpacing: 2,
+              fontWeight: FontWeight.w600,
             ),
-                 Divider(
+            textAlign: TextAlign.start,
+          ),
+          SizedBox(height: 20),
+          Divider(
             thickness: 1,
             color: Colors.black,
           ),
-            Text(
-              "Supporting educational and skill development programs.",
-              style: TextStyle(
-                color: Color.fromARGB(255, 17, 17, 17),
-                fontSize: 16,
-                fontFamily: "Montserrat",
-                // letterSpacing: 2,
-                fontWeight: FontWeight.w600,
-              ),
-              textAlign: TextAlign.start,
+          SizedBox(height: 20),
+          Text(
+            "Supporting educational and skill development programs.",
+            style: TextStyle(
+              color: Color(0xFF55B534),
+              fontSize: 16,
+              fontFamily: "Montserrat",
+              // letterSpacing: 2,
+              fontWeight: FontWeight.w600,
             ),
-                 Divider(
+            textAlign: TextAlign.start,
+          ),
+          SizedBox(height: 20),
+          Divider(
             thickness: 1,
             color: Colors.black,
           ),
+          SizedBox(height: 20),
+          Text(
+            "Facilitating disaster relief and recovery efforts",
+            style: TextStyle(
+              color: Color(0xFF55B534),
+              fontSize: 16,
+              fontFamily: "Montserrat",
+              // letterSpacing: 2,
+              fontWeight: FontWeight.w900,
+            ),
+            textAlign: TextAlign.start,
+          ),
+          SizedBox(height: 20),
+          Divider(
+            thickness: 1,
+            color: Colors.black,
+          ),
+          SizedBox(height: 20),
+          Text(
+            "Empowering individuals through targeted assistance.",
+            style: TextStyle(
+              color: Color(0xFF55B534),
+              fontSize: 16,
+              fontFamily: "Montserrat",
+              // letterSpacing: 2,
+              fontWeight: FontWeight.w600,
+            ),
+            textAlign: TextAlign.start,
+          ),
+          SizedBox(height: 40),
+        ],
+      ),
+    );
+  }
+}
+
+class Difference extends StatelessWidget {
+  const Difference({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        Container(
+          // color: const Color.fromARGB(16, 0, 0, 0),
+          width: MediaQuery.of(context).size.width,
+          height: 500,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(
+                  'Assests/Images/10026.png'), // Adjust the image path
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+        Align(
+          alignment: Alignment.center,
+          child: Container(
+            color: const Color.fromARGB(181, 0, 0, 0),
+            width: MediaQuery.of(context).size.width,
+            height: 500,
+          ),
+        ),
+        Align(
+          alignment: Alignment.center, // Adjust the alignment of the text
+          child: Padding(
+            padding: const EdgeInsets.all(30.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const SizedBox(height: 100),
+                const Text(
+                  "WANT TO MAKE A DIFFERENCE ?",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontFamily: "Cormorant",
+                    letterSpacing: 2,
+                    fontWeight: FontWeight.w900,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 40),
+                const Text(
+                  "Help us raise money for our humanitarian causes",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 35,
+                    fontFamily: "Cormorant",
+                    letterSpacing: 2,
+                    fontWeight: FontWeight.w900,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 30),
+                TextButton(
+                  onPressed: () {
+                    // Handle Donate button press
+                  },
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.green, // Button color
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 40,
+                      vertical: 15,
+                    ),
+                  ),
+                  child: const Text(
+                    "Donate",
+                    style: TextStyle(
+                      fontSize: 18.8,
+                      fontFamily: "Roboto",
+                      color: Colors.black,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+// class VideoPlayerApp extends StatelessWidget {
+//   const VideoPlayerApp({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       home: Scaffold(
+//         body: Center(
+//           child: AspectRatio(
+//             aspectRatio: 16 / 10,
+//             child: SamplePlayer(),
+//           ),
+//         ),
+//       ), // Provide video path
+//     );
+//   }
+// }
+
+class VideoPlayerApp extends StatelessWidget {
+  const VideoPlayerApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          children: [
+            const Text(
+                  "Our Projects",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 34,
+                    fontFamily: "Cormorant",
+                    letterSpacing: 1,
+                    fontWeight: FontWeight.w500,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 50),
+            AspectRatio(
+              aspectRatio: 16 / 10,
+              child: SamplePlayer(image: 'Assests/videos/video1.mp4'),
+            ),
+            const SizedBox(height: 50),
+            AspectRatio(
+              aspectRatio: 16 / 10,
+              child: SamplePlayer(image: 'Assests/videos/video4.mp4'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
+class Footer extends StatelessWidget {
+  const Footer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: SingleChildScrollView(
+        child: Column(
+           crossAxisAlignment: CrossAxisAlignment.center,
+          // mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const SizedBox(height: 50),
+            // Logo
+            Image.asset(
+              'Assests/Images/10001.png', // Replace with your image path
+              height: 100,
+            ),
+            const SizedBox(height: 10),
             Text(
-              "Facilitating disaster relief and recovery efforts",
+              'SadaqahZakaat.com\nBY WADUHA WELFARE',
               style: TextStyle(
-                color: Color(0xFF55B534),
-                fontSize: 16,
-                fontFamily: "Montserrat",
-                // letterSpacing: 2,
+                color: Colors.green[700],
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Cormorant',
+                height: 1.5,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 40),
+            // Useful Links
+            Text(
+              'Useful Links',
+              style: TextStyle(
+                color: Colors.green,
+                fontSize: 25,
+                fontWeight: FontWeight.w900,
+                fontFamily: 'Roboto',
+              ),
+            ),
+            const SizedBox(height: 20),
+            buildLink('Home'),
+            buildLink('About'),
+            buildLink('What We Do'),
+            buildLink('Contact'),
+            const SizedBox(height: 50),
+            // Subscription Section
+            Text(
+              'Subscribe Now',
+              style: TextStyle(
+                color: Colors.green,
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Roboto',
+              ),
+            ),
+            const SizedBox(height: 10),
+            Text(
+              'Don’t miss our future updates! Get Subscribed Today!',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 20,
+                fontFamily: 'Cormorant',
                 fontWeight: FontWeight.w900,
               ),
-              textAlign: TextAlign.start,
+              textAlign: TextAlign.center,
             ),
-                 Divider(
-            thickness: 1,
-            color: Colors.black,
-          ),
-            Text(
-              "Empowering individuals through targeted assistance.",
-              style: TextStyle(
-                color: Color.fromARGB(255, 17, 17, 17),
-                fontSize: 16,
-                fontFamily: "Montserrat",
-                // letterSpacing: 2,
-                fontWeight: FontWeight.w600,
+            const SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: 'Your mail here',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(30.0),
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  Container(
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                     color: Color(0xFF55B534),
+                      borderRadius: BorderRadius.circular(30.0),
+                    ),
+                    child: Icon(
+                      Icons.email,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
               ),
-              textAlign: TextAlign.start,
             ),
-                 Divider(
-            thickness: 1,
-            color: Colors.black,
-          ),
-        ],
+            const SizedBox(height: 80),
+               Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                 children: [
+                   Container(
+                          width: MediaQuery.of(context).size.width,
+                          height: 70,
+                          color: Color(0xFF55B534),
+                          child:const Text(
+                            ' ©2024. Sadqah Zakaat. All Rights Reserved.',
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.w300),
+                                textAlign: TextAlign.center,
+                          ),
+                          
+                        ),
+                 ],
+               ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  // Function to create link widgets
+  Widget buildLink(String title) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: Text(
+        title,
+        style: const TextStyle(
+          fontSize: 22,
+          color: Color.fromARGB(221, 21, 21, 21),
+          fontFamily: 'Roboto',
+          fontWeight: FontWeight.w500,
+        ),
+        textAlign: TextAlign.center,
       ),
     );
   }
