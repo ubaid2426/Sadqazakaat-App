@@ -4,9 +4,7 @@ import 'package:sadqahzakat/Components/Carosel/donate_main.dart';
 import 'package:sadqahzakat/Components/Carosel/donation_main.dart';
 import 'package:sadqahzakat/Components/Carosel/homeScreen_carousel.dart';
 import 'package:sadqahzakat/Components/beneficery_main.dart';
-import 'package:sadqahzakat/Components/footer_main.dart';
 import 'package:sadqahzakat/Components/video_player.dart';
-// import 'package:sadqahzakat/Components/video_player.dart';
 import 'package:sadqahzakat/Widgets/drawers_main.dart';
 
 void main() {
@@ -36,52 +34,52 @@ class Screen1 extends StatelessWidget {
             ),
           ),
           drawer: const MainDrawer(),
-          body:  SingleChildScrollView(
+          body: const SingleChildScrollView(
             child: Column(
               children: [
-                const CarouselHome(),
-                const H1Main(),
-                const About(),
-                const DonationData(),
-                const SizedBox(height: 50),
-                const Hadith(),
-                const SizedBox(height: 50),
-                const QuranVerse(),
-                const SizedBox(height: 50),
-                const Quotes(),
-                const SizedBox(height: 50),
-                const JoinUs(),
-                const SizedBox(height: 50),
-                const Donate(),
-                const Event(),
-                const MarriageSupport(
+                CarouselHome(),
+                H1Main(),
+                About(),
+                DonationData(),
+                SizedBox(height: 50),
+                Hadith(),
+                SizedBox(height: 50),
+                QuranVerse(),
+                SizedBox(height: 50),
+                Quotes(),
+                SizedBox(height: 50),
+                JoinUs(),
+                SizedBox(height: 50),
+                Donate(),
+                Event(),
+                MarriageSupport(
                   h3: "Our Numbers",
                   h1: 'Rs.100000+',
                   h2: 'Meal Donations',
                   fontawesome: FontAwesomeIcons.faceDizzy,
                 ),
-                const MarriageSupport(
+                MarriageSupport(
                   h1: 'Rs.400000+',
                   h2: 'Flood Donations',
                   fontawesome: FontAwesomeIcons.bolt,
                 ),
-                const MarriageSupport(
+                MarriageSupport(
                   h1: 'Rs.200000+',
                   h2: 'Medical Donations',
                   fontawesome: FontAwesomeIcons.houseChimneyUser,
                 ),
-                const MarriageSupport(
+                MarriageSupport(
                   h1: 'Rs.300000+',
                   h2: 'Marriage Support',
                   fontawesome: FontAwesomeIcons.solidHeart,
                 ),
-                const Beneficery(),
-                const Impact(),
-                const WeDo(),
-                const Difference(),
-                const SizedBox(height: 50),
-                const VideoPlayerApp(),
-                const SizedBox(height: 50),
+                Beneficery(),
+                Impact(),
+                WeDo(),
+                Difference(),
+                SizedBox(height: 50),
+                VideoPlayerApp(),
+                SizedBox(height: 50),
                 Footer(),
               ],
             ),
@@ -974,7 +972,6 @@ class Difference extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          // color: const Color.fromARGB(16, 0, 0, 0),
           width: MediaQuery.of(context).size.width,
           height: 500,
           decoration: const BoxDecoration(
@@ -1056,25 +1053,6 @@ class Difference extends StatelessWidget {
   }
 }
 
-// class VideoPlayerApp extends StatelessWidget {
-//   const VideoPlayerApp({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       home: Scaffold(
-//         body: Center(
-//           child: AspectRatio(
-//             aspectRatio: 16 / 10,
-//             child: SamplePlayer(),
-//           ),
-//         ),
-//       ), // Provide video path
-//     );
-//   }
-// }
-
 class VideoPlayerApp extends StatelessWidget {
   const VideoPlayerApp({super.key});
 
@@ -1086,17 +1064,17 @@ class VideoPlayerApp extends StatelessWidget {
         child: Column(
           children: [
             const Text(
-                  "Our Projects",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 34,
-                    fontFamily: "Cormorant",
-                    letterSpacing: 1,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 50),
+              "Our Projects",
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 34,
+                fontFamily: "Cormorant",
+                letterSpacing: 1,
+                fontWeight: FontWeight.w500,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 50),
             AspectRatio(
               aspectRatio: 16 / 10,
               child: SamplePlayer(image: 'Assests/videos/video1.mp4'),
@@ -1113,9 +1091,6 @@ class VideoPlayerApp extends StatelessWidget {
   }
 }
 
-
-
-
 class Footer extends StatelessWidget {
   const Footer({super.key});
 
@@ -1124,7 +1099,7 @@ class Footer extends StatelessWidget {
     return Center(
       child: SingleChildScrollView(
         child: Column(
-           crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           // mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const SizedBox(height: 50),
@@ -1147,7 +1122,7 @@ class Footer extends StatelessWidget {
             ),
             const SizedBox(height: 40),
             // Useful Links
-            Text(
+            const Text(
               'Useful Links',
               style: TextStyle(
                 color: Colors.green,
@@ -1163,7 +1138,7 @@ class Footer extends StatelessWidget {
             buildLink('Contact'),
             const SizedBox(height: 50),
             // Subscription Section
-            Text(
+            const Text(
               'Subscribe Now',
               style: TextStyle(
                 color: Colors.green,
@@ -1173,7 +1148,7 @@ class Footer extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            Text(
+            const Text(
               'Don’t miss our future updates! Get Subscribed Today!',
               style: TextStyle(
                 color: Colors.black,
@@ -1202,10 +1177,10 @@ class Footer extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
-                     color: Color(0xFF55B534),
+                      color: const Color(0xFF55B534),
                       borderRadius: BorderRadius.circular(30.0),
                     ),
-                    child: Icon(
+                    child: const Icon(
                       Icons.email,
                       color: Colors.white,
                     ),
@@ -1214,24 +1189,22 @@ class Footer extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 80),
-               Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                 children: [
-                   Container(
-                          width: MediaQuery.of(context).size.width,
-                          height: 70,
-                          color: Color(0xFF55B534),
-                          child:const Text(
-                            ' ©2024. Sadqah Zakaat. All Rights Reserved.',
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.w300),
-                                textAlign: TextAlign.center,
-                          ),
-                          
-                        ),
-                 ],
-               ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 70,
+                  color: const Color(0xFF55B534),
+                  child: const Text(
+                    ' ©2024. Sadqah Zakaat. All Rights Reserved.',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w300),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),

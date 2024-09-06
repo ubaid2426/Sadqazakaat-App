@@ -3,10 +3,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
-// void main() {
-//   runApp(const WheelchairDonationPage());
-// }
-
 class Donate extends StatelessWidget {
   const Donate({super.key});
 
@@ -262,31 +258,14 @@ class Data extends StatelessWidget {
                 child: const Text(
                   "Donate Now >",
                   style: TextStyle(
-                       fontSize: 18.8,
-                          fontFamily: "Roboto",
-                          color: Colors.black,
-                          fontWeight: FontWeight.w700,
+                    fontSize: 18.8,
+                    fontFamily: "Roboto",
+                    color: Colors.black,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
               ),
               const SizedBox(height: 20),
-              // SizedBox(
-              //   width: 100,
-              //   child: Row(
-              //     mainAxisAlignment: MainAxisAlignment.spaceAround,
-              //     crossAxisAlignment: CrossAxisAlignment.center,
-              //     children: [
-              //       const CircleAvatar(
-              //           radius: 5, backgroundColor: Colors.grey),
-              //       const SizedBox(width: 5),
-              //       const CircleAvatar(
-              //           radius: 5, backgroundColor: Colors.grey),
-              //       const SizedBox(width: 5),
-              //       const CircleAvatar(
-              //           radius: 5, backgroundColor: Colors.grey),
-              //     ],
-              //   ),
-              // ),
               const SizedBox(height: 20),
               Container(
                 height: 70,
@@ -317,8 +296,6 @@ class Data extends StatelessWidget {
     // );
   }
 }
-
-// import 'package:flutter/material.dart';
 
 class ChooseAmountPage extends StatefulWidget {
   // final String amount;
@@ -497,10 +474,10 @@ class _ChooseAmountPageState extends State<ChooseAmountPage> {
                     child: const Text(
                       "Donate Now >",
                       style: TextStyle(
-                           fontSize: 18.8,
-                          fontFamily: "Roboto",
-                          color: Colors.black,
-                          fontWeight: FontWeight.w700,
+                        fontSize: 18.8,
+                        fontFamily: "Roboto",
+                        color: Colors.black,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
                   ),
@@ -871,7 +848,6 @@ class DonationFormPageState extends State<DonationFormPage> {
                               border: OutlineInputBorder(),
                             ),
                           ),
-
                           const SizedBox(height: 16),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -890,7 +866,8 @@ class DonationFormPageState extends State<DonationFormPage> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) =>const ChooseAmountPage(),
+                                        builder: (context) =>
+                                            const ChooseAmountPage(),
                                       ),
                                     );
                                   },
@@ -949,14 +926,6 @@ class DonationFormPageState extends State<DonationFormPage> {
                             ],
                           ),
                           const SizedBox(height: 32),
-                          // ElevatedButton(
-                          //   onPressed: () {
-                          //     if (_formKey.currentState!.validate()) {
-                          //       _submitForm();
-                          //     }
-                          //   },
-                          //   child: const Text('Donate Now'),
-                          // ),
                         ],
                       ),
                     ),

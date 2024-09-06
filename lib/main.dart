@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sadqahzakat/Screen/Screen1.dart';
-// import 'package:sadqahzakat/Components/video_player.dart';
-// import 'package:sadqahzakat/Screen/Screen1.dart';
-// import 'package:sadqahzakat/Widgets/drawers_main.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,16 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Scaffold(
-        // appBar: AppBar(
-        //   title:  Text("activePageTitle"),
-        // ),
-        // drawer: MainDrawer(),
-        body: Screen1()
-      ),
+      home: Scaffold(body: Screen1()),
     );
   }
 }
-
-
-

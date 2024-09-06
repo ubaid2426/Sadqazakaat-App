@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 
 class HomePageCarousel extends StatelessWidget {
   final List<String> imageList;
-  final double carouselHeight;  // Changed the name to be more descriptive
-  
+  final double carouselHeight; // Changed the name to be more descriptive
+
   // Accepting a list of image URLs or file paths via constructor
-  const HomePageCarousel({super.key, required this.imageList, required this.carouselHeight});
+  const HomePageCarousel(
+      {super.key, required this.imageList, required this.carouselHeight});
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +23,11 @@ class HomePageCarousel extends StatelessWidget {
 
 class HomePage extends StatelessWidget {
   final List<String> imageList;
-  final double carouselHeight;  // Accepting carouselHeight here
-  
+  final double carouselHeight; // Accepting carouselHeight here
+
   // Constructor to accept imageList and carouselHeight in HomePage widget
-  const HomePage({super.key, required this.imageList, required this.carouselHeight});
+  const HomePage(
+      {super.key, required this.imageList, required this.carouselHeight});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +48,7 @@ class HomePage extends StatelessWidget {
               );
             }).toList(),
             options: CarouselOptions(
-              height: carouselHeight,  // Using carouselHeight here
+              height: carouselHeight, // Using carouselHeight here
               enlargeCenterPage: true,
               autoPlay: true,
               aspectRatio: 16 / 9,

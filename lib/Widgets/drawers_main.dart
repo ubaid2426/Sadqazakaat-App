@@ -94,7 +94,6 @@ class MainDrawer extends StatelessWidget {
                   subOptions: [
                     "Individual Donation",
                     'Request For Donation',
-                   
                   ],
                   fontawesome: FontAwesomeIcons.donate,
                 ),

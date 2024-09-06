@@ -29,7 +29,7 @@ class Benificery extends StatelessWidget {
             color: Colors.black,
           ),
           const SizedBox(height: 20),
-           Text(
+          Text(
             des,
             style: const TextStyle(
               color: Colors.black,

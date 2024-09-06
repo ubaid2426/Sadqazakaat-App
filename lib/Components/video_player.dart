@@ -17,7 +17,7 @@ class _SamplePlayerState extends State<SamplePlayer> {
     super.initState();
     flickManager = FlickManager(
       autoPlay: false,
-      videoPlayerController: VideoPlayerController.asset( widget.image
+      videoPlayerController: VideoPlayerController.asset(widget.image
           // "Assests/videos/video1.mp4"
           // Uri.parse(
           //     "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4"),
