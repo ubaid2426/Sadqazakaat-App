@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sadqahzakat/Screen/Screen1.dart';
+// import 'package:sadqahzakat/Screen/Screen1.dart';
+// import 'package:sadqahzakat/controller/fadeanimation.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,8 +12,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
       home: Scaffold(body: Screen1()),
     );
   }
 }
+

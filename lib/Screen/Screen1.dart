@@ -6,6 +6,7 @@ import 'package:sadqahzakat/Components/Carosel/homeScreen_carousel.dart';
 import 'package:sadqahzakat/Components/beneficery_main.dart';
 import 'package:sadqahzakat/Components/video_player.dart';
 import 'package:sadqahzakat/Widgets/drawers_main.dart';
+import 'package:sadqahzakat/controller/fade_animation.dart';
 
 void main() {
   runApp(const Screen1());
@@ -78,7 +79,7 @@ class Screen1 extends StatelessWidget {
                 WeDo(),
                 Difference(),
                 SizedBox(height: 50),
-                VideoPlayerApp(),
+                // VideoPlayerApp(),
                 SizedBox(height: 50),
                 Footer(),
               ],
@@ -197,15 +198,19 @@ class H1Main extends StatelessWidget {
       child: Stack(
         children: [
           // Background image
-          Container(
-            // color: const Color.fromARGB(16, 0, 0, 0),
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(
-                    'Assests/Images/10012.png'), // Adjust the image path
-                fit: BoxFit.cover,
+          FadeAnimation(
+             animationType: 'ZoomIn',
+              delay: 1000,
+            child: Container(
+              // color: const Color.fromARGB(16, 0, 0, 0),
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                      'Assests/Images/10012.png'), // Adjust the image path
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),
@@ -225,57 +230,77 @@ class H1Main extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
-                    "100+ PROJECTS ACROSS THE GLOBE",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      letterSpacing: 2,
-                      fontFamily: "Montserrat",
-                      fontWeight: FontWeight.w800,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                  const SizedBox(height: 40),
-                  const Text(
-                    "Empowering Communities, Changing Lives",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 38,
-                      fontFamily: "Cormorant",
-                      fontWeight: FontWeight.bold,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                  const SizedBox(height: 20),
-                  const Text(
-                    "We work towards ensuring a life of dignity, opportunity, and hope for all.",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 28.536,
-                      fontWeight: FontWeight.w800,
-                      fontFamily: "Cormorant",
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                  const SizedBox(height: 40),
-                  ElevatedButton(
-                    onPressed: () {
-                      // Handle Donate button press
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green, // Button color
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 40,
-                        vertical: 15,
+                  const SizedBox(
+                    width: 200,
+                    height: 200,
+                    child: FadeAnimation(
+                      animationType: "FadeInRight",
+                      delay: 1000,
+                      child: Text(
+                        "100+ PROJECTS ACROSS THE GLOBE",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          letterSpacing: 2,
+                          fontFamily: "Montserrat",
+                          fontWeight: FontWeight.w800,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
                     ),
-                    child: const Text(
-                      "DONATE",
+                  ),
+                  const SizedBox(height: 40),
+                  const FadeAnimation(
+                    animationType: "FadeInLeft",
+                    delay: 1000,
+                    child: Text(
+                      "Empowering Communities, Changing Lives",
                       style: TextStyle(
-                        fontSize: 18.8,
-                        fontFamily: "Montserrat",
                         color: Colors.white,
+                        fontSize: 38,
+                        fontFamily: "Cormorant",
+                        fontWeight: FontWeight.bold,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  const FadeAnimation(
+                    animationType: "FadeInRight",
+                    delay: 1000,
+                    child: Text(
+                      "We work towards ensuring a life of dignity, opportunity, and hope for all.",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 28.536,
+                        fontWeight: FontWeight.w800,
+                        fontFamily: "Cormorant",
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  const SizedBox(height: 40),
+                  FadeAnimation(
+                    animationType: "FadeInLeft",
+                    delay: 1000,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        // Handle Donate button press
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green, // Button color
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 40,
+                          vertical: 15,
+                        ),
+                      ),
+                      child: const Text(
+                        "DONATE",
+                        style: TextStyle(
+                          fontSize: 18.8,
+                          fontFamily: "Roboto",
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ),
@@ -299,15 +324,19 @@ class About extends StatelessWidget {
         height: 600,
         child: Stack(
           children: [
-            Container(
-              // color: const Color.fromARGB(16, 0, 0, 0),
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(
-                      'Assests/Images/10034.png'), // Adjust the image path
-                  fit: BoxFit.contain,
+            FadeAnimation(
+               animationType: 'ZoomIn',
+              delay: 1000,
+              child: Container(
+                // color: const Color.fromARGB(16, 0, 0, 0),
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                        'Assests/Images/10034.png'), // Adjust the image path
+                    fit: BoxFit.contain,
+                  ),
                 ),
               ),
             ),
@@ -327,57 +356,73 @@ class About extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      "About Us ",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20,
-                        fontFamily: "Montserrat",
-                        letterSpacing: 2,
-                        fontWeight: FontWeight.w600,
+                    const FadeAnimation(
+                      animationType: "FadeInLeft",
+                      delay: 1000,
+                      child: Text(
+                        "About Us ",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontFamily: "Montserrat",
+                          letterSpacing: 2,
+                          fontWeight: FontWeight.w600,
+                        ),
+                        textAlign: TextAlign.start,
                       ),
-                      textAlign: TextAlign.start,
                     ),
                     const SizedBox(height: 10),
-                    const Text(
-                      "Helping women never doubt that they are Valuable & Powerful",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 38,
-                        fontFamily: "Cormorant",
-                        fontWeight: FontWeight.bold,
-                      ),
-                      textAlign: TextAlign.start,
-                    ),
-                    const SizedBox(height: 40),
-                    const Text(
-                      "At our NGO, we extend a helping hand to those in need, working tirelessly to build brighter futures. Through community-driven initiatives and unwavering support, we empower individuals and families to overcome challenges and achieve their fullest potential.",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20.536,
-                        fontWeight: FontWeight.w500,
-                        fontFamily: "Cormorant",
-                      ),
-                      textAlign: TextAlign.start,
-                    ),
-                    const SizedBox(height: 40),
-                    TextButton(
-                      onPressed: () {
-                        // Handle Donate button press
-                      },
-                      style: TextButton.styleFrom(
-                        backgroundColor: Colors.green, // Button color
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 40,
-                          vertical: 15,
-                        ),
-                      ),
-                      child: const Text(
-                        "Read More",
+                    const FadeAnimation(
+                      animationType: "FadeInRight",
+                      delay: 1000,
+                      child: Text(
+                        "Helping women never doubt that they are Valuable & Powerful",
                         style: TextStyle(
-                          fontSize: 18.8,
-                          fontFamily: "Montserrat",
                           color: Colors.black,
+                          fontSize: 38,
+                          fontFamily: "Cormorant",
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.start,
+                      ),
+                    ),
+                    const SizedBox(height: 40),
+                    const FadeAnimation(
+                      animationType: "FadeInLeft",
+                      delay: 1000,
+                      child: Text(
+                        "At our NGO, we extend a helping hand to those in need, working tirelessly to build brighter futures. Through community-driven initiatives and unwavering support, we empower individuals and families to overcome challenges and achieve their fullest potential.",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20.536,
+                          fontWeight: FontWeight.w500,
+                          fontFamily: "Cormorant",
+                        ),
+                        textAlign: TextAlign.start,
+                      ),
+                    ),
+                    const SizedBox(height: 40),
+                    FadeAnimation(
+                      animationType: "FadeInRight",
+                      delay: 1000,
+                      child: TextButton(
+                        onPressed: () {
+                          // Handle Donate button press
+                        },
+                        style: TextButton.styleFrom(
+                          backgroundColor: Colors.green, // Button color
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 40,
+                            vertical: 15,
+                          ),
+                        ),
+                        child: const Text(
+                          "Read More",
+                          style: TextStyle(
+                            fontSize: 18.8,
+                            fontFamily: "Montserrat",
+                            color: Colors.black,
+                          ),
                         ),
                       ),
                     ),
@@ -402,41 +447,53 @@ class Event extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           const SizedBox(height: 30),
-          const Text(
-            "Event ",
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 20,
-              fontFamily: "Montserrat",
-              letterSpacing: 2,
-              fontWeight: FontWeight.w600,
+          FadeAnimation(
+            animationType: "FadeInLeft",
+            delay: 1000,
+            child: const Text(
+              "Event ",
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 20,
+                fontFamily: "Montserrat",
+                letterSpacing: 2,
+                fontWeight: FontWeight.w600,
+              ),
+              textAlign: TextAlign.start,
             ),
-            textAlign: TextAlign.start,
           ),
           const SizedBox(height: 30),
-          const Text(
-            "Help Us Fund Critical Projects for Lasting Impact ",
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 25,
-              fontFamily: "Cormorant",
-              letterSpacing: 2,
-              fontWeight: FontWeight.w900,
+          FadeAnimation(
+            animationType: "FadeInRight",
+            delay: 1000,
+            child: const Text(
+              "Help Us Fund Critical Projects for Lasting Impact ",
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 25,
+                fontFamily: "Cormorant",
+                letterSpacing: 2,
+                fontWeight: FontWeight.w900,
+              ),
+              textAlign: TextAlign.start,
             ),
-            textAlign: TextAlign.start,
           ),
           const SizedBox(height: 30),
           Stack(
             children: [
-              Container(
-                // color: const Color.fromARGB(16, 0, 0, 0),
-                width: MediaQuery.of(context).size.width,
-                height: 200,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(
-                        'Assests/Images/10024.png'), // Adjust the image path
-                    fit: BoxFit.cover,
+              FadeAnimation(
+                 animationType: 'ZoomIn',
+              delay: 1000,
+                child: Container(
+                  // color: const Color.fromARGB(16, 0, 0, 0),
+                  width: MediaQuery.of(context).size.width,
+                  height: 200,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(
+                          'Assests/Images/10024.png'), // Adjust the image path
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),
@@ -456,37 +513,45 @@ class Event extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      const Text(
-                        "Help us raise money for impactful change",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 25,
-                          fontFamily: "Cormorant",
-                          letterSpacing: 2,
-                          fontWeight: FontWeight.w900,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                      const SizedBox(height: 10),
-                      TextButton(
-                        onPressed: () {
-                          // Handle Donate button press
-                        },
-                        style: TextButton.styleFrom(
-                          backgroundColor: Colors.green, // Button color
-                          // padding: const EdgeInsets.symmetric(
-                          //   horizontal: 40,
-                          //   vertical: 15,
-                          // ),
-                        ),
+                      FadeAnimation(
+                        animationType: "FadeInLeft",
+                        delay: 1000,
                         child: const Text(
-                          "Read More",
+                          "Help us raise money for impactful change",
                           style: TextStyle(
-                            fontSize: 18.8,
-                            fontFamily: "Roboto",
-                            color: Colors.black,
+                            color: Colors.white,
+                            fontSize: 25,
+                            fontFamily: "Cormorant",
+                            letterSpacing: 2,
+                            fontWeight: FontWeight.w900,
                           ),
                           textAlign: TextAlign.center,
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      FadeAnimation(
+                        animationType: "FadeInRight",
+                        delay: 1000,
+                        child: TextButton(
+                          onPressed: () {
+                            // Handle Donate button press
+                          },
+                          style: TextButton.styleFrom(
+                            backgroundColor: Colors.green, // Button color
+                            // padding: const EdgeInsets.symmetric(
+                            //   horizontal: 40,
+                            //   vertical: 15,
+                            // ),
+                          ),
+                          child: const Text(
+                            "Read More",
+                            style: TextStyle(
+                              fontSize: 18.8,
+                              fontFamily: "Roboto",
+                              color: Colors.black,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
                         ),
                       ),
                     ],
@@ -512,15 +577,19 @@ class JoinUs extends StatelessWidget {
       children: [
         Stack(
           children: [
-            Container(
-              // color: const Color.fromARGB(16, 0, 0, 0),
-              width: MediaQuery.of(context).size.width,
-              height: 800,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(
-                      'Assests/Images/10022.png'), // Adjust the image path
-                  fit: BoxFit.cover,
+            FadeAnimation(
+               animationType: 'ZoomIn',
+              delay: 1000,
+              child: Container(
+                // color: const Color.fromARGB(16, 0, 0, 0),
+                width: MediaQuery.of(context).size.width,
+                height: 800,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                        'Assests/Images/10022.png'), // Adjust the image path
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
@@ -541,32 +610,40 @@ class JoinUs extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(height: 200),
-                    const Text(
-                      "COME JOIN US ",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 25,
-                        fontFamily: "Montserrat",
-                        letterSpacing: 2,
-                        fontWeight: FontWeight.w600,
+                    FadeAnimation(
+                      animationType: "FadeInRight",
+                      delay: 1000,
+                      child: const Text(
+                        "COME JOIN US ",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontFamily: "Montserrat",
+                          letterSpacing: 2,
+                          fontWeight: FontWeight.w600,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: 50),
                     const Divider(
                       thickness: 3,
                     ),
                     const SizedBox(height: 50),
-                    const Text(
-                      "Come join us in making a difference. Your support helps change lives and strengthen communities.",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 30,
-                        fontFamily: "Cormorant",
-                        letterSpacing: 2,
-                        fontWeight: FontWeight.w600,
+                    FadeAnimation(
+                      animationType: "FadeInLeft",
+                      delay: 1000,
+                      child: const Text(
+                        "Come join us in making a difference. Your support helps change lives and strengthen communities.",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 30,
+                          fontFamily: "Cormorant",
+                          letterSpacing: 2,
+                          fontWeight: FontWeight.w600,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: 50),
                     Center(
@@ -581,14 +658,18 @@ class JoinUs extends StatelessWidget {
                             vertical: 15,
                           ),
                         ),
-                        child: const Text(
-                          "Join Our Community",
-                          style: TextStyle(
-                            fontSize: 25,
-                            fontFamily: "Roboto",
-                            color: Colors.black,
+                        child: FadeAnimation(
+                          animationType: "FadeInRight",
+                          delay: 1000,
+                          child: const Text(
+                            "Join Our Community",
+                            style: TextStyle(
+                              fontSize: 25,
+                              fontFamily: "Roboto",
+                              color: Colors.black,
+                            ),
+                            textAlign: TextAlign.center,
                           ),
-                          textAlign: TextAlign.center,
                         ),
                       ),
                     ),
@@ -626,45 +707,61 @@ class MarriageSupport extends StatelessWidget {
         padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
-            Text(
-              h3 ?? '',
-              style: const TextStyle(
-                color: Color.fromARGB(255, 19, 19, 19),
-                fontSize: 40,
-                fontFamily: "Cormorant",
-                letterSpacing: 2,
-                fontWeight: FontWeight.w900,
+            FadeAnimation(
+              animationType: 'FadeInRight',
+              delay: 1000,
+              child: Text(
+                h3 ?? '',
+                style: const TextStyle(
+                  color: Color.fromARGB(255, 19, 19, 19),
+                  fontSize: 40,
+                  fontFamily: "Cormorant",
+                  letterSpacing: 2,
+                  fontWeight: FontWeight.w900,
+                ),
+                textAlign: TextAlign.center,
               ),
-              textAlign: TextAlign.center,
             ),
             const SizedBox(height: 10),
-            Icon(
-              fontawesome,
-              size: 50,
+            FadeAnimation(
+              animationType: 'FadeInLeft',
+              delay: 1000,
+              child: Icon(
+                fontawesome,
+                size: 50,
+              ),
             ),
             const SizedBox(height: 30),
-            Text(
-              h1,
-              style: const TextStyle(
-                color: Color.fromARGB(255, 8, 8, 8),
-                fontSize: 30,
-                fontFamily: "Cormorant",
-                letterSpacing: 2,
-                fontWeight: FontWeight.w900,
+            FadeAnimation(
+              animationType: 'FadeInRight',
+              delay: 1000,
+              child: Text(
+                h1,
+                style: const TextStyle(
+                  color: Color.fromARGB(255, 8, 8, 8),
+                  fontSize: 30,
+                  fontFamily: "Cormorant",
+                  letterSpacing: 2,
+                  fontWeight: FontWeight.w900,
+                ),
+                textAlign: TextAlign.center,
               ),
-              textAlign: TextAlign.center,
             ),
             const SizedBox(height: 20),
-            Text(
-              h2,
-              style: const TextStyle(
-                color: Color.fromARGB(255, 8, 8, 8),
-                fontSize: 30,
-                fontFamily: "Roboto",
-                letterSpacing: 2,
-                fontWeight: FontWeight.w600,
+            FadeAnimation(
+              animationType: 'FadeInLeft',
+              delay: 1000,
+              child: Text(
+                h2,
+                style: const TextStyle(
+                  color: Color.fromARGB(255, 8, 8, 8),
+                  fontSize: 30,
+                  fontFamily: "Roboto",
+                  letterSpacing: 2,
+                  fontWeight: FontWeight.w600,
+                ),
+                textAlign: TextAlign.center,
               ),
-              textAlign: TextAlign.center,
             ),
           ],
         ),
@@ -681,16 +778,20 @@ class Beneficery extends StatelessWidget {
     return const Column(
       children: [
         SizedBox(height: 50),
-        Text(
-          "What People Say About Us",
-          style: TextStyle(
-            color: Color.fromARGB(255, 8, 8, 8),
-            fontSize: 30,
-            fontFamily: "Cormorant",
-            letterSpacing: 2,
-            fontWeight: FontWeight.w600,
+        FadeAnimation(
+           animationType: 'FadeInRight',
+              delay: 1000,
+          child: Text(
+            "What People Say About Us",
+            style: TextStyle(
+              color: Color.fromARGB(255, 8, 8, 8),
+              fontSize: 30,
+              fontFamily: "Cormorant",
+              letterSpacing: 2,
+              fontWeight: FontWeight.w600,
+            ),
+            textAlign: TextAlign.center,
           ),
-          textAlign: TextAlign.center,
         ),
         SizedBox(height: 20),
         Benificery(
@@ -795,15 +896,19 @@ class Outer extends StatelessWidget {
             padding: const EdgeInsets.all(0.0),
             child: Align(
               alignment: Alignment.center,
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: 500,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    opacity: .1,
-                    image: AssetImage(
-                        'Assests/Images/10034.png'), // Adjust the image path
-                    fit: BoxFit.contain,
+              child: FadeAnimation(
+                 animationType: 'ZoomIn',
+              delay: 1000,
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 500,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      opacity: .1,
+                      image: AssetImage(
+                          'Assests/Images/10034.png'), // Adjust the image path
+                      fit: BoxFit.contain,
+                    ),
                   ),
                 ),
               ),
@@ -813,16 +918,20 @@ class Outer extends StatelessWidget {
               child: Column(
             children: [
               SizedBox(height: 30),
-              Text(
-                "Our Impact",
-                style: TextStyle(
-                  color: Color.fromARGB(255, 17, 17, 17),
-                  fontSize: 20,
-                  fontFamily: "Montserrat",
-                  letterSpacing: 2,
-                  fontWeight: FontWeight.w600,
+              FadeAnimation(
+                 animationType: 'FadeInRight',
+              delay: 1000,
+                child: Text(
+                  "Our Impact",
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 17, 17, 17),
+                    fontSize: 20,
+                    fontFamily: "Montserrat",
+                    letterSpacing: 2,
+                    fontWeight: FontWeight.w600,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-                textAlign: TextAlign.center,
               ),
               SizedBox(height: 10),
               Padding(
@@ -833,16 +942,20 @@ class Outer extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20),
-              Text(
-                "ransforming lives and communities through dedicated support and outreach efforts",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 34,
-                  fontFamily: "Cormorant",
-                  letterSpacing: 1,
-                  fontWeight: FontWeight.w500,
+              FadeAnimation(
+                 animationType: 'FadeInLeft',
+              delay: 1000,
+                child: Text(
+                  "ransforming lives and communities through dedicated support and outreach efforts",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 34,
+                    fontFamily: "Cormorant",
+                    letterSpacing: 1,
+                    fontWeight: FontWeight.w500,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-                textAlign: TextAlign.center,
               ),
               SizedBox(height: 50),
             ],
@@ -863,15 +976,19 @@ class WeDo extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            "What We Do",
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 25,
-              fontFamily: "Cormorant",
-              fontWeight: FontWeight.w600,
+          FadeAnimation(
+             animationType: 'FadeInRight',
+              delay: 1000,
+            child: Text(
+              "What We Do",
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 25,
+                fontFamily: "Cormorant",
+                fontWeight: FontWeight.w600,
+              ),
+              textAlign: TextAlign.start,
             ),
-            textAlign: TextAlign.start,
           ),
           SizedBox(height: 30),
           Divider(
@@ -879,15 +996,19 @@ class WeDo extends StatelessWidget {
             color: Colors.black,
           ),
           SizedBox(height: 30),
-          Text(
-            "Providing essential resources to those in need.",
-            style: TextStyle(
-              color: Color(0xFF55B534),
-              fontSize: 16,
-              fontFamily: "Montserrat",
-              fontWeight: FontWeight.w600,
+          FadeAnimation(
+             animationType: 'FadeInLeft',
+              delay: 1000,
+            child: Text(
+              "Providing essential resources to those in need.",
+              style: TextStyle(
+                color: Color(0xFF55B534),
+                fontSize: 16,
+                fontFamily: "Montserrat",
+                fontWeight: FontWeight.w600,
+              ),
+              textAlign: TextAlign.start,
             ),
-            textAlign: TextAlign.start,
           ),
           SizedBox(height: 20),
           Divider(
@@ -895,16 +1016,20 @@ class WeDo extends StatelessWidget {
             color: Colors.black,
           ),
           SizedBox(height: 20),
-          Text(
-            "Improving community health and well-being",
-            style: TextStyle(
-              color: Color(0xFF55B534),
-              fontSize: 16,
-              fontFamily: "Montserrat",
-              // letterSpacing: 2,
-              fontWeight: FontWeight.w600,
+          FadeAnimation(
+             animationType: 'FadeInRight',
+              delay: 1000,
+            child: Text(
+              "Improving community health and well-being",
+              style: TextStyle(
+                color: Color(0xFF55B534),
+                fontSize: 16,
+                fontFamily: "Montserrat",
+                // letterSpacing: 2,
+                fontWeight: FontWeight.w600,
+              ),
+              textAlign: TextAlign.start,
             ),
-            textAlign: TextAlign.start,
           ),
           SizedBox(height: 20),
           Divider(
@@ -912,16 +1037,20 @@ class WeDo extends StatelessWidget {
             color: Colors.black,
           ),
           SizedBox(height: 20),
-          Text(
-            "Supporting educational and skill development programs.",
-            style: TextStyle(
-              color: Color(0xFF55B534),
-              fontSize: 16,
-              fontFamily: "Montserrat",
-              // letterSpacing: 2,
-              fontWeight: FontWeight.w600,
+          FadeAnimation(
+             animationType: 'FadeInLeft',
+              delay: 1000,
+            child: Text(
+              "Supporting educational and skill development programs.",
+              style: TextStyle(
+                color: Color(0xFF55B534),
+                fontSize: 16,
+                fontFamily: "Montserrat",
+                // letterSpacing: 2,
+                fontWeight: FontWeight.w600,
+              ),
+              textAlign: TextAlign.start,
             ),
-            textAlign: TextAlign.start,
           ),
           SizedBox(height: 20),
           Divider(
@@ -929,16 +1058,20 @@ class WeDo extends StatelessWidget {
             color: Colors.black,
           ),
           SizedBox(height: 20),
-          Text(
-            "Facilitating disaster relief and recovery efforts",
-            style: TextStyle(
-              color: Color(0xFF55B534),
-              fontSize: 16,
-              fontFamily: "Montserrat",
-              // letterSpacing: 2,
-              fontWeight: FontWeight.w900,
+          FadeAnimation(
+             animationType: 'FadeInRight',
+              delay: 1000,
+            child: Text(
+              "Facilitating disaster relief and recovery efforts",
+              style: TextStyle(
+                color: Color(0xFF55B534),
+                fontSize: 16,
+                fontFamily: "Montserrat",
+                // letterSpacing: 2,
+                fontWeight: FontWeight.w900,
+              ),
+              textAlign: TextAlign.start,
             ),
-            textAlign: TextAlign.start,
           ),
           SizedBox(height: 20),
           Divider(
@@ -946,16 +1079,20 @@ class WeDo extends StatelessWidget {
             color: Colors.black,
           ),
           SizedBox(height: 20),
-          Text(
-            "Empowering individuals through targeted assistance.",
-            style: TextStyle(
-              color: Color(0xFF55B534),
-              fontSize: 16,
-              fontFamily: "Montserrat",
-              // letterSpacing: 2,
-              fontWeight: FontWeight.w600,
+          FadeAnimation(
+             animationType: 'FadeInRight',
+              delay: 1000,
+            child: Text(
+              "Empowering individuals through targeted assistance.",
+              style: TextStyle(
+                color: Color(0xFF55B534),
+                fontSize: 16,
+                fontFamily: "Montserrat",
+                // letterSpacing: 2,
+                fontWeight: FontWeight.w600,
+              ),
+              textAlign: TextAlign.start,
             ),
-            textAlign: TextAlign.start,
           ),
           SizedBox(height: 40),
         ],
@@ -971,14 +1108,18 @@ class Difference extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Container(
-          width: MediaQuery.of(context).size.width,
-          height: 500,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(
-                  'Assests/Images/10026.png'), // Adjust the image path
-              fit: BoxFit.cover,
+        FadeAnimation(
+           animationType: 'ZoomIn',
+              delay: 1000,
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            height: 500,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(
+                    'Assests/Images/10026.png'), // Adjust the image path
+                fit: BoxFit.cover,
+              ),
             ),
           ),
         ),
@@ -999,49 +1140,65 @@ class Difference extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const SizedBox(height: 100),
-                const Text(
-                  "WANT TO MAKE A DIFFERENCE ?",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontFamily: "Cormorant",
-                    letterSpacing: 2,
-                    fontWeight: FontWeight.w900,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 40),
-                const Text(
-                  "Help us raise money for our humanitarian causes",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 35,
-                    fontFamily: "Cormorant",
-                    letterSpacing: 2,
-                    fontWeight: FontWeight.w900,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 30),
-                TextButton(
-                  onPressed: () {
-                    // Handle Donate button press
-                  },
-                  style: TextButton.styleFrom(
-                    backgroundColor: Colors.green, // Button color
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 40,
-                      vertical: 15,
-                    ),
-                  ),
+                FadeAnimation(
+                   animationType: 'FadeInRight',
+              delay: 1000,
                   child: const Text(
-                    "Donate",
+                    "WANT TO MAKE A DIFFERENCE ?",
                     style: TextStyle(
-                      fontSize: 18.8,
-                      fontFamily: "Roboto",
-                      color: Colors.black,
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontFamily: "Cormorant",
+                      letterSpacing: 2,
+                      fontWeight: FontWeight.w900,
                     ),
                     textAlign: TextAlign.center,
+                  ),
+                ),
+                const SizedBox(height: 40),
+                FadeAnimation(
+                   animationType: 'FadeInLeft',
+              delay: 1000,
+                  child: const Text(
+                    "Help us raise money for our humanitarian causes",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 35,
+                      fontFamily: "Cormorant",
+                      letterSpacing: 2,
+                      fontWeight: FontWeight.w900,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                const SizedBox(height: 30),
+                FadeAnimation(
+                   animationType: 'FadeInRight',
+              delay: 1000,
+                  child: TextButton(
+                    onPressed: () {
+                      // Handle Donate button press
+                    },
+                    style: TextButton.styleFrom(
+                      backgroundColor: Colors.green, // Button color
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 40,
+                        vertical: 15,
+                      ),
+                    ),
+                    child: FadeAnimation(
+                       animationType: 'FadeInLeft',
+              delay: 1000,
+                      child: const Text(
+                        "Donate",
+                        style: TextStyle(
+                          fontSize: 18.8,
+                          fontFamily: "Roboto",
+                          color: Colors.black,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
                   ),
                 ),
               ],

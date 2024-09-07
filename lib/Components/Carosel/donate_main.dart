@@ -2,6 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:sadqahzakat/controller/fade_animation.dart';
+// import 'package:sadqahzakat/controller/scale_animation.dart';
 
 class Donate extends StatelessWidget {
   const Donate({super.key});
@@ -245,7 +247,7 @@ class Data extends StatelessWidget {
                       builder: (context) => const ChooseAmountPage(),
                     ),
                   );
-
+              
                   // Handle Donate button press
                 },
                 style: TextButton.styleFrom(

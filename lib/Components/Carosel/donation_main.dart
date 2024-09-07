@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sadqahzakat/controller/fade_animation.dart';
 
 class Donation extends StatelessWidget {
   final String imageUrl;
@@ -21,40 +22,52 @@ class Donation extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: 250,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(imageUrl), // Adjust the image path
-                  fit: BoxFit.cover,
+            FadeAnimation(
+               animationType: 'ZoomIn',
+              delay: 1000,
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: 250,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(imageUrl), // Adjust the image path
+                    fit: BoxFit.cover,
+                  ),
                 ),
+                //  fit: BoxFit.cover,
+                // child: Image.asset(imageUrl),
               ),
-              //  fit: BoxFit.cover,
-              // child: Image.asset(imageUrl),
             ), // Access data from props
             const SizedBox(height: 16),
-            Text(
-              title,
-              style: const TextStyle(
-                  fontSize: 20,
-                  fontFamily: "Montserrat",
-                  fontWeight: FontWeight.bold),
+            FadeAnimation(
+               animationType: "FadeInLeft",
+                      delay: 1000,
+              child: Text(
+                title,
+                style: const TextStyle(
+                    fontSize: 20,
+                    fontFamily: "Montserrat",
+                    fontWeight: FontWeight.bold),
+              ),
             ),
             const Divider(
               color: Colors.black,
               thickness: 3,
             ),
             const SizedBox(height: 8),
-            Text(
-              description,
-              style: const TextStyle(
-                  fontSize: 28,
-                  fontFamily: "Cormorant",
-                  letterSpacing: 2,
-                  color: Color.fromARGB(255, 98, 97, 97),
-                  fontWeight: FontWeight.w600),
-              textAlign: TextAlign.start,
+            FadeAnimation(
+              animationType: "FadeInRight",
+                      delay: 1000,
+              child: Text(
+                description,
+                style: const TextStyle(
+                    fontSize: 28,
+                    fontFamily: "Cormorant",
+                    letterSpacing: 2,
+                    color: Color.fromARGB(255, 98, 97, 97),
+                    fontWeight: FontWeight.w600),
+                textAlign: TextAlign.start,
+              ),
             ),
           ],
         ),
@@ -121,10 +134,10 @@ class DonationData extends StatelessWidget {
           child: const Text(
             "View All",
             style: TextStyle(
-                 fontSize: 18.8,
-                          fontFamily: "Roboto",
-                          color: Colors.black,
-                          fontWeight: FontWeight.w700,
+              fontSize: 18.8,
+              fontFamily: "Roboto",
+              color: Colors.black,
+              fontWeight: FontWeight.w700,
             ),
           ),
         ),

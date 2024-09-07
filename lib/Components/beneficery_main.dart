@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sadqahzakat/controller/fade_animation.dart';
 
 class Benificery extends StatelessWidget {
   final String des;
@@ -12,16 +13,20 @@ class Benificery extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Text(
-            "Beneficiary",
-            style: TextStyle(
-              color: Color.fromARGB(255, 17, 17, 17),
-              fontSize: 20,
-              fontFamily: "Montserrat",
-              letterSpacing: 2,
-              fontWeight: FontWeight.w600,
+          FadeAnimation(
+             animationType: 'FadeInLeft',
+              delay: 1000,
+            child: const Text(
+              "Beneficiary",
+              style: TextStyle(
+                color: Color.fromARGB(255, 17, 17, 17),
+                fontSize: 20,
+                fontFamily: "Montserrat",
+                letterSpacing: 2,
+                fontWeight: FontWeight.w600,
+              ),
+              textAlign: TextAlign.center,
             ),
-            textAlign: TextAlign.center,
           ),
           const SizedBox(height: 10),
           const Divider(
@@ -29,38 +34,46 @@ class Benificery extends StatelessWidget {
             color: Colors.black,
           ),
           const SizedBox(height: 20),
-          Text(
-            des,
-            style: const TextStyle(
-              color: Colors.black,
-              fontSize: 30,
-              fontFamily: "Cormorant",
-              letterSpacing: 1,
-              fontWeight: FontWeight.w500,
+          FadeAnimation(
+             animationType: 'FadeInRight',
+              delay: 1000,
+            child: Text(
+              des,
+              style: const TextStyle(
+                color: Colors.black,
+                fontSize: 30,
+                fontFamily: "Cormorant",
+                letterSpacing: 1,
+                fontWeight: FontWeight.w500,
+              ),
+              textAlign: TextAlign.center,
             ),
-            textAlign: TextAlign.center,
           ),
           const SizedBox(height: 50),
           Center(
-            child: TextButton(
-              onPressed: () {
-                // Handle Donate button press
-              },
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.green, // Button color
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 40,
-                  vertical: 15,
+            child: FadeAnimation(
+               animationType: 'FadeInLeft',
+              delay: 1000,
+              child: TextButton(
+                onPressed: () {
+                  // Handle Donate button press
+                },
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.green, // Button color
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 40,
+                    vertical: 15,
+                  ),
                 ),
-              ),
-              child: const Text(
-                "Donate Now",
-                style: TextStyle(
-                  fontSize: 25,
-                  fontFamily: "Roboto",
-                  color: Colors.black,
+                child: const Text(
+                  "Donate Now",
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontFamily: "Roboto",
+                    color: Colors.black,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-                textAlign: TextAlign.center,
               ),
             ),
           ),
