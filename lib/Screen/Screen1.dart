@@ -79,7 +79,7 @@ class Screen1 extends StatelessWidget {
                 WeDo(),
                 Difference(),
                 SizedBox(height: 50),
-                // VideoPlayerApp(),
+                VideoPlayerApp(),
                 SizedBox(height: 50),
                 Footer(),
               ],
@@ -200,7 +200,7 @@ class H1Main extends StatelessWidget {
           // Background image
           FadeAnimation(
              animationType: 'ZoomIn',
-              delay: 1000,
+              delay: 500,
             child: Container(
               // color: const Color.fromARGB(16, 0, 0, 0),
               width: MediaQuery.of(context).size.width,
@@ -230,23 +230,19 @@ class H1Main extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const SizedBox(
-                    width: 200,
-                    height: 200,
-                    child: FadeAnimation(
-                      animationType: "FadeInRight",
-                      delay: 1000,
-                      child: Text(
-                        "100+ PROJECTS ACROSS THE GLOBE",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          letterSpacing: 2,
-                          fontFamily: "Montserrat",
-                          fontWeight: FontWeight.w800,
-                        ),
-                        textAlign: TextAlign.center,
+                  FadeAnimation(
+                    animationType: "FadeInRight",
+                    delay: 1000,
+                    child: Text(
+                      "100+ PROJECTS ACROSS THE GLOBE",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        letterSpacing: 2,
+                        fontFamily: "Montserrat",
+                        fontWeight: FontWeight.w800,
                       ),
+                      textAlign: TextAlign.center,
                     ),
                   ),
                   const SizedBox(height: 40),
@@ -326,7 +322,7 @@ class About extends StatelessWidget {
           children: [
             FadeAnimation(
                animationType: 'ZoomIn',
-              delay: 1000,
+              delay: 500,
               child: Container(
                 // color: const Color.fromARGB(16, 0, 0, 0),
                 width: MediaQuery.of(context).size.width,
@@ -579,7 +575,7 @@ class JoinUs extends StatelessWidget {
           children: [
             FadeAnimation(
                animationType: 'ZoomIn',
-              delay: 1000,
+              delay: 500,
               child: Container(
                 // color: const Color.fromARGB(16, 0, 0, 0),
                 width: MediaQuery.of(context).size.width,
@@ -844,15 +840,20 @@ class Inner extends StatelessWidget {
         children: [
           Stack(
             children: [
-              Container(
-                // color: const Color.fromARGB(16, 0, 0, 0),
-                width: MediaQuery.of(context).size.width,
-                height: 500,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(
-                        'Assests/Images/10025.png'), // Adjust the image path
-                    fit: BoxFit.cover,
+              FadeAnimation(
+                delay: 500,
+                
+                animationType: 'ZoomIn',
+                child: Container(
+                  // color: const Color.fromARGB(16, 0, 0, 0),
+                  width: MediaQuery.of(context).size.width,
+                  height: 500,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(
+                          'Assests/Images/10025.png'), // Adjust the image path
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),
@@ -899,15 +900,20 @@ class Outer extends StatelessWidget {
               child: FadeAnimation(
                  animationType: 'ZoomIn',
               delay: 1000,
-                child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 500,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      opacity: .1,
-                      image: AssetImage(
-                          'Assests/Images/10034.png'), // Adjust the image path
-                      fit: BoxFit.contain,
+                child: FadeAnimation(
+                      delay: 500,
+                
+                animationType: 'ZoomIn',
+                  child: Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 500,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        opacity: .1,
+                        image: AssetImage(
+                            'Assests/Images/10034.png'), // Adjust the image path
+                        fit: BoxFit.contain,
+                      ),
                     ),
                   ),
                 ),
@@ -1110,7 +1116,7 @@ class Difference extends StatelessWidget {
       children: [
         FadeAnimation(
            animationType: 'ZoomIn',
-              delay: 1000,
+              delay: 500,
           child: Container(
             width: MediaQuery.of(context).size.width,
             height: 500,

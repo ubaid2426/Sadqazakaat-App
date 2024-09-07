@@ -24,7 +24,7 @@ class Donation extends StatelessWidget {
           children: [
             FadeAnimation(
                animationType: 'ZoomIn',
-              delay: 1000,
+              delay: 500,
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 height: 250,
